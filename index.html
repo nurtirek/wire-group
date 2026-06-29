@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Wire Group — iikoAnalytics · Restaurant Intelligence in Telegram</title>
+<meta name="description" content="iikoAnalytics by Wire Group — a Telegram Mini App that puts your iiko restaurant analytics in your pocket. Revenue, average check, stop-list, invoice OCR, and an AI analyst — without a laptop." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Manrope:wght@200;300;400;500;600&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body class="page-home">
+
+<!-- Custom cursor -->
+<div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+<div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+
+<!-- Top bar -->
+<header class="topbar">
+  <a href="#hero" class="topbar-mark" data-cursor="link" aria-label="Wire Group home">
+    <span class="topbar-mark-symbol">
+      <svg viewBox="0 0 40 40" aria-hidden="true">
+        <circle cx="20" cy="20" r="18" />
+        <path d="M10 22 Q 16 14 20 22 T 30 22" />
+      </svg>
+    </span>
+    <span class="topbar-mark-text">WIRE&nbsp;GROUP</span>
+  </a>
+
+  <nav class="topbar-nav">
+    <span class="topbar-nav-status">
+      <span class="topbar-dot"></span>
+      <span data-i18n="status">Available for select work · 2026</span>
+    </span>
+  </nav>
+
+  <div class="topbar-actions">
+    <button class="lang-toggle" id="langToggle" data-cursor="link" aria-label="Toggle language">
+      <span class="lang-current">EN</span>
+      <span class="lang-divider"></span>
+      <span class="lang-other">RU</span>
+    </button>
+    <button class="menu-button" id="menuOpen" data-cursor="link" aria-label="Open menu">
+      <span class="menu-button-lines"><span></span><span></span></span>
+      <span class="menu-button-label" data-i18n="menu">Menu</span>
+    </button>
+  </div>
+</header>
+
+<!-- Menu overlay -->
+<div class="menu" id="menu" aria-hidden="true">
+  <div class="menu-inner">
+    <div class="menu-top">
+      <span class="menu-eyebrow" data-i18n="menu-eyebrow">Navigation — Wire Group</span>
+      <button class="menu-close" id="menuClose" data-cursor="link" aria-label="Close menu">
+        <span class="menu-close-x"><span></span><span></span></span>
+        <span data-i18n="close">Close</span>
+      </button>
+    </div>
+
+    <nav class="menu-list">
+      <a href="#hero" class="menu-item" data-cursor="link" data-menu-link>
+        <span class="menu-index">01</span>
+        <span class="menu-label" data-i18n="nav-home">Home</span>
+        <span class="menu-arrow">→</span>
+      </a>
+      <a href="#catalogue" class="menu-item" data-cursor="link" data-menu-link>
+        <span class="menu-index">02</span>
+        <span class="menu-label" data-i18n="nav-catalog">Catalogue</span>
+        <span class="menu-arrow">→</span>
+      </a>
+      <a href="#contact" class="menu-item" data-cursor="link" data-menu-link>
+        <span class="menu-index">03</span>
+        <span class="menu-label" data-i18n="nav-contact">Contact</span>
+        <span class="menu-arrow">→</span>
+      </a>
+    </nav>
+
+    <div class="menu-foot">
+      <div class="menu-foot-block">
+        <span class="menu-foot-label" data-i18n="direct">Direct</span>
+        <a href="mailto:hello@wiregroup.studio" data-cursor="link">hello@wiregroup.studio</a>
+      </div>
+      <div class="menu-foot-block">
+        <span class="menu-foot-label" data-i18n="channels">Channels</span>
+        <div class="menu-foot-links">
+          <a href="https://t.me/wiregroup" target="_blank" rel="noopener" data-cursor="link">Telegram</a>
+          <a href="https://wa.me/00000000000" target="_blank" rel="noopener" data-cursor="link">WhatsApp</a>
+        </div>
+      </div>
+      <div class="menu-foot-block">
+        <span class="menu-foot-label" data-i18n="meridian">Meridian</span>
+        <span class="menu-clock" id="menuClock">— : — : —</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<main>
+
+<!-- ========== HERO — brand statement, minimal ========== -->
+<section class="brand-hero" id="hero">
+  <div class="hero-atmosphere" aria-hidden="true"></div>
+  <div class="hero-grid-overlay" aria-hidden="true"></div>
+
+  <div class="brand-hero-inner">
+    <span class="brand-eyebrow mono">
+      <span class="brand-eyebrow-rule"></span>
+      <span data-i18n="brand-eyebrow">Independent · Almaty · MMXXVI</span>
+      <span class="brand-eyebrow-rule"></span>
+    </span>
+
+    <div class="brand-wordmark-stage" id="brandStage">
+      <h1 class="brand-wordmark">
+        <span class="letter">W</span><span class="letter">I</span><span class="letter">R</span><span class="letter">E</span>
+      </h1>
+    </div>
+
+    <p class="brand-tagline" data-i18n="brand-tagline">
+      <span class="serif-italic">A studio</span> for intelligent products.
+    </p>
+
+    <div class="brand-meta mono">
+      <a href="#catalogue" class="brand-meta-cta" data-cursor="link" data-menu-link>
+        <span data-i18n="brand-cta-1">See the catalogue</span>
+        <span class="brand-cta-arrow">⟶</span>
+      </a>
+      <span class="brand-meta-sep">·</span>
+      <a href="#contact" class="brand-meta-cta secondary" data-cursor="link" data-menu-link>
+        <span data-i18n="brand-cta-2">Contact</span>
+      </a>
+    </div>
+  </div>
+
+  <a href="#manifesto" class="scroll-cue" data-cursor="link" data-menu-link>
+    <span class="scroll-cue-text" data-i18n="scroll">Scroll</span>
+    <span class="scroll-cue-line"><span></span></span>
+  </a>
+</section>
+
+<!-- ========== MANIFESTO — big statement with cream accent ========== -->
+<section class="manifesto" id="manifesto">
+  <div class="manifesto-bg" aria-hidden="true">
+    <svg class="manifesto-orb" viewBox="0 0 600 600" preserveAspectRatio="xMidYMid slice">
+      <defs>
+        <radialGradient id="orbGrad" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#4A7FD4" stop-opacity="0.32"/>
+          <stop offset="40%" stop-color="#4A7FD4" stop-opacity="0.10"/>
+          <stop offset="100%" stop-color="#4A7FD4" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+      <circle cx="300" cy="300" r="280" fill="url(#orbGrad)"/>
+    </svg>
+  </div>
+
+  <div class="manifesto-inner">
+    <span class="kicker mono" data-i18n="manifesto-kicker">— Manifesto · 01</span>
+    <h2 class="manifesto-headline">
+      <span data-i18n="manifesto-1">We make tools</span>
+      <span class="serif-italic accent" data-i18n="manifesto-2">that disappear</span>
+      <span data-i18n="manifesto-3">into the work.</span>
+    </h2>
+    <p class="manifesto-foot mono">
+      <span data-i18n="manifesto-foot">Few products. Held longer. Refined deeper.</span>
+    </p>
+  </div>
+</section>
+
+<!-- ========== CATALOGUE — visual product tile ========== -->
+<section class="catalogue-brand" id="catalogue">
+  <div class="catalogue-brand-head">
+    <span class="kicker mono" data-i18n="catalogue-kicker">— Catalogue · 2026</span>
+    <h2 class="catalogue-brand-title">
+      <span data-i18n="catalogue-title-1">Built by hand,</span>
+      <span class="serif-italic" data-i18n="catalogue-title-2">released slowly.</span>
+    </h2>
+  </div>
+
+  <!-- Primary tile: iikoAnalytics -->
+  <a href="iikoanalytics.html" class="tile tile-primary" data-cursor="view">
+    <div class="tile-inner">
+      <div class="tile-text">
+        <span class="tile-index mono">N° 01 / 2026</span>
+        <h3 class="tile-name">iikoAnalytics</h3>
+        <p class="tile-desc" data-i18n="tile-1-desc">A Telegram Mini App that puts your iiko restaurant in your pocket. Revenue, stop-list, invoice OCR, an AI analyst — all without a laptop.</p>
+        <div class="tile-tags mono">
+          <span>RESTAURANT TECH</span>
+          <span class="dot-sep">·</span>
+          <span>TELEGRAM</span>
+          <span class="dot-sep">·</span>
+          <span>AI</span>
+        </div>
+        <span class="tile-cta">
+          <span data-i18n="tile-cta">See the product</span>
+          <span class="tile-arrow">⟶</span>
+        </span>
+      </div>
+
+      <div class="tile-visual">
+        <div class="phone phone-compact">
+          <div class="phone-notch" aria-hidden="true"></div>
+          <div class="phone-screen">
+            <div class="ph-header">
+              <span class="ph-back" aria-hidden="true">‹</span>
+              <span class="ph-title">iikoAnalytics</span>
+              <span class="ph-live"><span class="ph-live-dot"></span> live</span>
+            </div>
+            <div class="ph-card primary">
+              <div class="ph-card-head">
+                <span class="ph-card-label">Revenue · today</span>
+                <span class="ph-delta up">▲ 12.4%</span>
+              </div>
+              <div class="ph-card-value">₸ 4 281 600</div>
+              <svg class="ph-spark" viewBox="0 0 200 40" preserveAspectRatio="none" aria-hidden="true">
+                <polyline points="0,32 20,28 40,30 60,22 80,25 100,18 120,20 140,12 160,14 180,8 200,10" />
+                <circle cx="200" cy="10" r="2.5" class="ph-spark-dot" />
+              </svg>
+            </div>
+            <div class="ph-row">
+              <div class="ph-card small">
+                <span class="ph-card-label">Check</span>
+                <span class="ph-card-value">₸ 9.2k</span>
+              </div>
+              <div class="ph-card small">
+                <span class="ph-card-label">Guests</span>
+                <span class="ph-card-value">463</span>
+              </div>
+            </div>
+            <div class="ph-card ai">
+              <div class="ph-card-head">
+                <span class="ph-card-label">◈ AI · today</span>
+              </div>
+              <p class="ph-ai-text">Dinner traffic down 22%. Swap two stop-list items before 7 pm.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <span class="tile-status"><span class="tile-status-dot"></span> Live · 2026</span>
+  </a>
+
+  <!-- Secondary tiles -->
+  <div class="tile-row">
+    <a href="ai-services.html" class="tile tile-placeholder tile-live" data-cursor="view">
+      <span class="tile-index mono">N° 02 / 2026</span>
+      <span class="tile-soon mono live" data-i18n="card-2-badge">Services · 2026</span>
+      <h3 class="tile-name-sm" data-i18n="card-2-name">AI Services</h3>
+      <p class="tile-desc-sm" data-i18n="card-2-desc">Bots, sites and process automation under one roof. Built bespoke for your business in 1–4 weeks.</p>
+      <span class="tile-cta-sm mono">
+        <span data-i18n="card-2-arrow">Volume 02 ⟶</span>
+      </span>
+    </a>
+    <a href="call-analytics.html" class="tile tile-placeholder tile-live" data-cursor="view">
+      <span class="tile-index mono">N° 03 / 2026</span>
+      <span class="tile-soon mono live">Live · 2026</span>
+      <h3 class="tile-name-sm">Call Analytics</h3>
+      <p class="tile-desc-sm">A Telegram Mini App for Binotel call-centers. AI scores every call, flags bad and lost-deal conversations, names the best operator — QA on autopilot.</p>
+      <span class="tile-cta-sm mono">
+        <span>Volume 03 ⟶</span>
+      </span>
+    </a>
+  </div>
+</section>
+
+<!-- ========== APPROACH — 3 big blocks ========== -->
+<section class="approach" id="approach">
+  <div class="approach-head">
+    <span class="kicker mono" data-i18n="approach-kicker">— How we work</span>
+    <h2 class="approach-title">
+      <span data-i18n="approach-title-1">Three principles.</span>
+      <span class="serif-italic accent" data-i18n="approach-title-2">No fourth.</span>
+    </h2>
+  </div>
+
+  <div class="approach-grid">
+    <article class="principle">
+      <svg class="principle-glyph" viewBox="0 0 80 80" aria-hidden="true">
+        <circle cx="40" cy="40" r="34" />
+        <circle cx="40" cy="40" r="20" class="thin" />
+        <circle cx="40" cy="40" r="6" class="solid" />
+      </svg>
+      <span class="principle-num mono">01</span>
+      <h3 data-i18n="p1-name">Few</h3>
+      <p data-i18n="p1-body">Few products. Held longer. Refined deeper. We release fewer and keep them in our hands.</p>
+    </article>
+
+    <article class="principle">
+      <svg class="principle-glyph" viewBox="0 0 80 80" aria-hidden="true">
+        <rect x="14" y="14" width="52" height="52" transform="rotate(45 40 40)" />
+        <rect x="26" y="26" width="28" height="28" transform="rotate(45 40 40)" class="thin" />
+        <rect x="36" y="36" width="8" height="8" transform="rotate(45 40 40)" class="solid" />
+      </svg>
+      <span class="principle-num mono">02</span>
+      <h3 data-i18n="p2-name">Quiet</h3>
+      <p data-i18n="p2-body">No theatrics. The product speaks first. Interfaces step back so the work can step forward.</p>
+    </article>
+
+    <article class="principle">
+      <svg class="principle-glyph" viewBox="0 0 80 80" aria-hidden="true">
+        <rect x="14" y="14" width="52" height="52" rx="2" />
+        <line x1="14" y1="40" x2="66" y2="40" class="thin" />
+        <line x1="40" y1="14" x2="40" y2="66" class="thin" />
+        <circle cx="40" cy="40" r="4" class="solid" />
+      </svg>
+      <span class="principle-num mono">03</span>
+      <h3 data-i18n="p3-name">Whole</h3>
+      <p data-i18n="p3-body">Engineered, not assembled. Every component shaped to its purpose, nothing borrowed by default.</p>
+    </article>
+  </div>
+</section>
+
+<!-- ========== CONTACT — bold pillars ========== -->
+<section class="contact-brand" id="contact">
+  <div class="contact-brand-bg" aria-hidden="true"></div>
+
+  <div class="contact-brand-inner">
+    <span class="kicker mono" data-i18n="contact-brand-kicker">— Reach out</span>
+    <h2 class="contact-brand-title">
+      <span data-i18n="contact-brand-title-1">Let's</span>
+      <span class="serif-italic accent" data-i18n="contact-brand-title-2">talk.</span>
+    </h2>
+    <p class="contact-brand-sub" data-i18n="contact-brand-sub">For pilots, integrations or commissions. One working day reply.</p>
+
+    <div class="pillars">
+      <a href="https://t.me/wiregroup" target="_blank" rel="noopener" class="pillar" data-cursor="link">
+        <span class="pillar-num mono">01</span>
+        <span class="pillar-label mono">Telegram</span>
+        <span class="pillar-handle">@wiregroup</span>
+        <span class="pillar-icon">⟶</span>
+      </a>
+      <a href="https://wa.me/00000000000" target="_blank" rel="noopener" class="pillar" data-cursor="link">
+        <span class="pillar-num mono">02</span>
+        <span class="pillar-label mono">WhatsApp</span>
+        <span class="pillar-handle" data-i18n="pillar-direct">Direct line</span>
+        <span class="pillar-icon">⟶</span>
+      </a>
+      <a href="mailto:hello@wiregroup.studio" class="pillar" data-cursor="link">
+        <span class="pillar-num mono">03</span>
+        <span class="pillar-label mono">Email</span>
+        <span class="pillar-handle">hello@wiregroup.studio</span>
+        <span class="pillar-icon">⟶</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="footer-mark">
+    <span class="footer-mark-symbol">
+      <svg viewBox="0 0 40 40" aria-hidden="true">
+        <circle cx="20" cy="20" r="18" />
+        <path d="M10 22 Q 16 14 20 22 T 30 22" />
+      </svg>
+    </span>
+    <span>WIRE GROUP · 2026 — <span data-i18n="footer-note">An independent studio</span></span>
+  </div>
+  <div class="footer-right">
+    <span data-i18n="footer-build">Hand built · No templates</span>
+    <span class="footer-time" id="footerTime">— : —</span>
+  </div>
+</footer>
+
+</main>
+
+<script src="main.js"></script>
+
+</body>
+</html>

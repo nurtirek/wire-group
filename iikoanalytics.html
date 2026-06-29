@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>iikoAnalytics — Restaurant Intelligence in Telegram · by Wire Group</title>
+<meta name="description" content="iikoAnalytics — Telegram Mini App for iiko restaurants. Revenue, average check, stop-list, invoice OCR, AI analyst. Open in Telegram, no installs." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Manrope:wght@200;300;400;500;600&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body class="page-product">
+
+<!-- Custom cursor -->
+<div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+<div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+
+<!-- Top bar -->
+<header class="topbar">
+  <a href="#hero" class="topbar-mark" data-cursor="link" aria-label="Wire Group home">
+    <span class="topbar-mark-symbol">
+      <svg viewBox="0 0 40 40" aria-hidden="true">
+        <circle cx="20" cy="20" r="18" />
+        <path d="M10 22 Q 16 14 20 22 T 30 22" />
+      </svg>
+    </span>
+    <span class="topbar-mark-text">WIRE&nbsp;GROUP</span>
+  </a>
+
+  <nav class="topbar-nav">
+    <span class="topbar-nav-status">
+      <span class="topbar-dot"></span>
+      <span data-i18n="status">Available for select work · 2026</span>
+    </span>
+  </nav>
+
+  <div class="topbar-actions">
+    <button class="lang-toggle" id="langToggle" data-cursor="link" aria-label="Toggle language">
+      <span class="lang-current">EN</span>
+      <span class="lang-divider"></span>
+      <span class="lang-other">RU</span>
+    </button>
+    <button class="menu-button" id="menuOpen" data-cursor="link" aria-label="Open menu">
+      <span class="menu-button-lines"><span></span><span></span></span>
+      <span class="menu-button-label" data-i18n="menu">Menu</span>
+    </button>
+  </div>
+</header>
+
+<!-- Menu overlay -->
+<div class="menu" id="menu" aria-hidden="true">
+  <div class="menu-inner">
+    <div class="menu-top">
+      <span class="menu-eyebrow" data-i18n="menu-eyebrow">Navigation — Wire Group</span>
+      <button class="menu-close" id="menuClose" data-cursor="link" aria-label="Close menu">
+        <span class="menu-close-x"><span></span><span></span></span>
+        <span data-i18n="close">Close</span>
+      </button>
+    </div>
+
+    <nav class="menu-list">
+      <a href="index.html#hero" class="menu-item" data-cursor="link">
+        <span class="menu-index">01</span>
+        <span class="menu-label" data-i18n="nav-home">Home</span>
+        <span class="menu-arrow">→</span>
+      </a>
+      <a href="index.html#catalogue" class="menu-item" data-cursor="link">
+        <span class="menu-index">02</span>
+        <span class="menu-label" data-i18n="nav-catalog">Catalogue</span>
+        <span class="menu-arrow">→</span>
+      </a>
+      <a href="#contact" class="menu-item" data-cursor="link" data-menu-link>
+        <span class="menu-index">03</span>
+        <span class="menu-label" data-i18n="nav-contact">Contact</span>
+        <span class="menu-arrow">→</span>
+      </a>
+    </nav>
+
+    <div class="menu-foot">
+      <div class="menu-foot-block">
+        <span class="menu-foot-label" data-i18n="direct">Direct</span>
+        <a href="mailto:hello@wiregroup.studio" data-cursor="link">hello@wiregroup.studio</a>
+      </div>
+      <div class="menu-foot-block">
+        <span class="menu-foot-label" data-i18n="channels">Channels</span>
+        <div class="menu-foot-links">
+          <a href="https://t.me/wiregroup" target="_blank" rel="noopener" data-cursor="link">Telegram</a>
+          <a href="https://wa.me/00000000000" target="_blank" rel="noopener" data-cursor="link">WhatsApp</a>
+        </div>
+      </div>
+      <div class="menu-foot-block">
+        <span class="menu-foot-label" data-i18n="meridian">Meridian</span>
+        <span class="menu-clock" id="menuClock">— : — : —</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<main>
+
+<!-- ========== PRODUCT HERO ========== -->
+<section class="product-hero" id="hero">
+  <div class="hero-atmosphere" aria-hidden="true"></div>
+
+  <a href="index.html" class="back-link mono" data-cursor="link">
+    <span class="back-arrow">←</span>
+    <span data-i18n="back-wg">Wire Group · Catalogue 01</span>
+  </a>
+
+  <div class="product-intro-grid">
+    <div class="product-intro-meta">
+      <span class="product-kicker mono" data-i18n="product-kicker">For restaurants on iiko POS · v1.0 · 2026</span>
+      <h1 class="product-headline">
+        <span data-i18n="product-headline-1">Your restaurant</span>
+        <br />
+        <span class="serif-italic" data-i18n="product-headline-2">in Telegram.</span>
+      </h1>
+      <p class="product-sub" data-i18n="product-sub">iiko analytics in your pocket. No laptop, no logins, no desktop. Open Telegram — see revenue, average check, stop-list, supplier invoices. An AI analyst tells you what is wrong with the day, in plain language.</p>
+
+      <div class="product-cta-row">
+        <a href="https://t.me/iikoanalyzebot" target="_blank" rel="noopener" class="cta-primary" data-cursor="link">
+          <span class="cta-icon" aria-hidden="true">▶</span>
+          <span data-i18n="cta-open-bot">Open the bot</span>
+          <span class="cta-arrow">⟶</span>
+        </a>
+        <a href="#features" class="cta-secondary" data-cursor="link" data-menu-link>
+          <span data-i18n="cta-how-works">See what's inside</span>
+        </a>
+      </div>
+
+      <ul class="product-quickfacts">
+        <li>
+          <span class="qf-label mono" data-i18n="qf-1-label">Setup</span>
+          <span class="qf-value" data-i18n="qf-1-value">3 steps · ~90 seconds</span>
+        </li>
+        <li>
+          <span class="qf-label mono" data-i18n="qf-2-label">Channel</span>
+          <span class="qf-value" data-i18n="qf-2-value">Telegram Mini App</span>
+        </li>
+        <li>
+          <span class="qf-label mono" data-i18n="qf-3-label">Integration</span>
+          <span class="qf-value" data-i18n="qf-3-value">iiko Server REST 9.x</span>
+        </li>
+        <li>
+          <span class="qf-label mono" data-i18n="qf-4-label">AI</span>
+          <span class="qf-value" data-i18n="qf-4-value">Claude Sonnet · Anthropic</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="product-mockup" data-cursor="view">
+      <div class="phone-orbit">
+
+        <!-- Floating callouts — selling proof, minimal text -->
+        <aside class="orbit-card orbit-ai" aria-hidden="true">
+          <span class="orbit-label mono" data-i18n="orbit-ai-label">AI · Invoice OCR</span>
+          <div class="orbit-flow">
+            <svg class="orbit-doc" viewBox="0 0 24 28" aria-hidden="true">
+              <rect x="2.5" y="2" width="19" height="24" rx="1.4" fill="none" stroke="currentColor" stroke-width="1"/>
+              <line x1="6.5" y1="9"  x2="17.5" y2="9"  stroke="currentColor" stroke-width="1"/>
+              <line x1="6.5" y1="13" x2="17.5" y2="13" stroke="currentColor" stroke-width="1"/>
+              <line x1="6.5" y1="17" x2="14"   y2="17" stroke="currentColor" stroke-width="1"/>
+              <line x1="6.5" y1="21" x2="12"   y2="21" stroke="currentColor" stroke-width="1"/>
+            </svg>
+            <span class="orbit-arrow">⟶</span>
+            <span class="orbit-iiko">iiko</span>
+          </div>
+          <span class="orbit-meta mono" data-i18n="orbit-ai-meta">Claude · ~2 s</span>
+        </aside>
+
+        <aside class="orbit-card orbit-net" aria-hidden="true">
+          <span class="orbit-label mono" data-i18n="orbit-net-label">5 Branches · Live</span>
+          <svg class="orbit-constellation" viewBox="0 0 140 64" aria-hidden="true">
+            <line x1="14"  y1="46" x2="52"  y2="22"/>
+            <line x1="52"  y1="22" x2="92"  y2="34"/>
+            <line x1="92"  y1="34" x2="124" y2="50"/>
+            <line x1="14"  y1="46" x2="42"  y2="58"/>
+            <line x1="42"  y1="58" x2="92"  y2="34"/>
+            <circle cx="14"  cy="46" r="2.6"/>
+            <circle cx="42"  cy="58" r="2.6"/>
+            <circle cx="92"  cy="34" r="2.6"/>
+            <circle cx="124" cy="50" r="2.6"/>
+            <circle cx="52"  cy="22" r="3.2" class="active"/>
+            <circle cx="52"  cy="22" r="8"   class="active-ring"/>
+          </svg>
+          <span class="orbit-meta mono" data-i18n="orbit-net-meta">Merged in one view</span>
+        </aside>
+
+        <aside class="orbit-card orbit-price" aria-hidden="true">
+          <span class="orbit-label mono" data-i18n="orbit-price-label">Price · Watch</span>
+          <div class="orbit-pricerow">
+            <span class="orbit-price-name" data-i18n="orbit-price-name">Milk</span>
+            <span class="orbit-price-delta">+ 12%</span>
+          </div>
+          <svg class="orbit-spark" viewBox="0 0 120 26" preserveAspectRatio="none" aria-hidden="true">
+            <polyline points="0,21 16,19 32,20 48,16 64,14 80,9 96,11 120,3"/>
+            <circle cx="120" cy="3" r="2.2"/>
+          </svg>
+        </aside>
+
+        <div class="phone">
+        <div class="phone-glow" aria-hidden="true"></div>
+        <div class="phone-notch" aria-hidden="true"></div>
+        <div class="phone-screen">
+          <div class="ph-statusbar">
+            <span>9:41</span>
+            <span class="ph-status-icons">●●●●● · 5G · 86%</span>
+          </div>
+          <div class="ph-header">
+            <span class="ph-back" aria-hidden="true">‹</span>
+            <span class="ph-title">iikoAnalytics</span>
+            <span class="ph-live"><span class="ph-live-dot"></span> live</span>
+          </div>
+          <div class="ph-tabs">
+            <span class="ph-tab is-active">Pulse</span>
+            <span class="ph-tab">Sales</span>
+            <span class="ph-tab">Staff</span>
+            <span class="ph-tab">+</span>
+          </div>
+
+          <div class="ph-card primary">
+            <div class="ph-card-head">
+              <span class="ph-card-label">Revenue · today</span>
+              <span class="ph-delta up">▲ 12.4%</span>
+            </div>
+            <div class="ph-card-value">₸ 4 281 600</div>
+            <svg class="ph-spark" viewBox="0 0 200 40" preserveAspectRatio="none" aria-hidden="true">
+              <polyline points="0,32 20,28 40,30 60,22 80,25 100,18 120,20 140,12 160,14 180,8 200,10" />
+              <circle cx="200" cy="10" r="2.5" class="ph-spark-dot" />
+            </svg>
+          </div>
+
+          <div class="ph-row">
+            <div class="ph-card small">
+              <span class="ph-card-label">Avg. check</span>
+              <span class="ph-card-value">₸ 9 240</span>
+            </div>
+            <div class="ph-card small">
+              <span class="ph-card-label">Guests</span>
+              <span class="ph-card-value">463</span>
+            </div>
+          </div>
+
+          <div class="ph-card alert">
+            <div class="ph-card-head">
+              <span class="ph-card-label"><span class="alert-dot"></span> Stop-list · 3 items</span>
+              <span class="ph-time">30 s</span>
+            </div>
+            <div class="ph-list">
+              <span>· Beef tartare</span>
+              <span>· Burrata</span>
+              <span>· Espresso tonic</span>
+            </div>
+          </div>
+
+          <div class="ph-card ai">
+            <div class="ph-card-head">
+              <span class="ph-card-label">◈ AI · why today is off</span>
+            </div>
+            <p class="ph-ai-text">Dinner traffic down 22%. Two stop-list items are bestsellers — swap them on the tablet menu before 7 pm.</p>
+          </div>
+        </div>
+      </div>
+
+      </div><!-- /.phone-orbit -->
+      <span class="mockup-caption mono" data-i18n="mockup-caption">Preview · actual interface</span>
+    </div>
+  </div>
+</section>
+
+<!-- ========== PAIN VS SOLUTION ========== -->
+<section class="pain-section section" id="pain">
+  <div class="section-header">
+    <span class="section-index">03</span>
+    <span class="section-title" data-i18n="pain-section-title">What changes</span>
+    <span class="section-rule"></span>
+  </div>
+
+  <div class="pain-header">
+    <h2 class="pain-title">
+      <span data-i18n="pain-title-1">Before iikoAnalytics</span>
+      <span class="pain-slash">/</span>
+      <span class="serif-italic" data-i18n="pain-title-2">After.</span>
+    </h2>
+    <p class="pain-sub" data-i18n="pain-sub">Eight everyday pains of running an iiko restaurant. Solved.</p>
+  </div>
+
+  <ul class="pain-list">
+    <li class="pain-row">
+      <span class="pain-index mono">01</span>
+      <div class="pain-col before"><p data-i18n="pain-1-b">Laptop-only routine</p></div>
+      <span class="pain-arrow" aria-hidden="true">⟶</span>
+      <div class="pain-col after"><p data-i18n="pain-1-a">Phone-first pulse</p></div>
+    </li>
+    <li class="pain-row">
+      <span class="pain-index mono">02</span>
+      <div class="pain-col before"><p data-i18n="pain-2-b">Branch by branch arithmetic</p></div>
+      <span class="pain-arrow" aria-hidden="true">⟶</span>
+      <div class="pain-col after"><p data-i18n="pain-2-a">Multi-select merge</p></div>
+    </li>
+    <li class="pain-row">
+      <span class="pain-index mono">03</span>
+      <div class="pain-col before"><p data-i18n="pain-3-b">Stop-list from angry guests</p></div>
+      <span class="pain-arrow" aria-hidden="true">⟶</span>
+      <div class="pain-col after"><p data-i18n="pain-3-a">Live · 30 s refresh</p></div>
+    </li>
+    <li class="pain-row">
+      <span class="pain-index mono">04</span>
+      <div class="pain-col before"><p data-i18n="pain-4-b">Hand-typed invoices</p></div>
+      <span class="pain-arrow" aria-hidden="true">⟶</span>
+      <div class="pain-col after"><p data-i18n="pain-4-a">AI OCR · 2 seconds</p></div>
+    </li>
+    <li class="pain-row">
+      <span class="pain-index mono">05</span>
+      <div class="pain-col before"><p data-i18n="pain-5-b">Blind price creep</p></div>
+      <span class="pain-arrow" aria-hidden="true">⟶</span>
+      <div class="pain-col after"><p data-i18n="pain-5-a">Per-supplier alerts</p></div>
+    </li>
+    <li class="pain-row">
+      <span class="pain-index mono">06</span>
+      <div class="pain-col before"><p data-i18n="pain-6-b">Menu by guesswork</p></div>
+      <span class="pain-arrow" aria-hidden="true">⟶</span>
+      <div class="pain-col after"><p data-i18n="pain-6-a">Menu engineering · 2 × 2</p></div>
+    </li>
+    <li class="pain-row">
+      <span class="pain-index mono">07</span>
+      <div class="pain-col before"><p data-i18n="pain-7-b">Cash expenses lost</p></div>
+      <span class="pain-arrow" aria-hidden="true">⟶</span>
+      <div class="pain-col after"><p data-i18n="pain-7-a">Logged in 10 seconds</p></div>
+    </li>
+    <li class="pain-row">
+      <span class="pain-index mono">08</span>
+      <div class="pain-col before"><p data-i18n="pain-8-b">Excel for year-over-year</p></div>
+      <span class="pain-arrow" aria-hidden="true">⟶</span>
+      <div class="pain-col after"><p data-i18n="pain-8-a">YoY built in</p></div>
+    </li>
+  </ul>
+</section>
+
+<!-- ========== FEATURES GRID ========== -->
+<section class="features-section section" id="features">
+  <div class="section-header">
+    <span class="section-index">04</span>
+    <span class="section-title" data-i18n="features-title">Inside iikoAnalytics</span>
+    <span class="section-rule"></span>
+  </div>
+
+  <div class="features-intro">
+    <h2 class="features-headline" data-split>
+      <span data-i18n="features-headline">Every chapter of restaurant operations, refined into one screen.</span>
+    </h2>
+  </div>
+
+  <div class="features-grid">
+
+    <article class="feature-card">
+      <div class="feature-visual">
+        <svg viewBox="0 0 240 100" class="fv-svg" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+          <text x="14" y="20" class="fv-label">REVENUE · TODAY</text>
+          <text x="14" y="48" class="fv-value">₸ 4 281 600</text>
+          <text x="160" y="20" class="fv-label fv-up">▲ 12.4%</text>
+          <polyline points="14,82 46,76 78,79 110,68 142,72 174,58 206,62 224,52" class="fv-line" />
+          <circle cx="224" cy="52" r="3" class="fv-dot" />
+        </svg>
+      </div>
+      <div class="feature-card-top">
+        <span class="feature-number mono">01</span>
+        <span class="feature-tag mono" data-i18n="feat-1-tag">Home screen</span>
+      </div>
+      <h3 data-i18n="feat-1-title">Pulse — your restaurant in one screen</h3>
+      <p data-i18n="feat-1-body">Today's revenue and delta to yesterday, average check, guest count, 7-day chart, daily forecast.</p>
+      <ul>
+        <li data-i18n="feat-1-li-1">Stop-list live, 30 s refresh</li>
+        <li data-i18n="feat-1-li-2">AI analyst in chat</li>
+        <li data-i18n="feat-1-li-3">Open orders and yesterday recap</li>
+      </ul>
+    </article>
+
+    <article class="feature-card">
+      <div class="feature-visual">
+        <svg viewBox="0 0 240 100" class="fv-svg" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+          <text x="14" y="20" class="fv-label">TOP CATEGORIES</text>
+          <g class="fv-bars">
+            <rect x="14"  y="44" width="22" height="44" />
+            <rect x="44"  y="32" width="22" height="56" />
+            <rect x="74"  y="48" width="22" height="40" />
+            <rect x="104" y="38" width="22" height="50" />
+            <rect x="134" y="56" width="22" height="32" />
+            <rect x="164" y="44" width="22" height="44" />
+            <rect x="194" y="62" width="22" height="26" />
+          </g>
+          <line x1="14" y1="88" x2="216" y2="88" class="fv-baseline" />
+        </svg>
+      </div>
+      <div class="feature-card-top">
+        <span class="feature-number mono">02</span>
+        <span class="feature-tag mono" data-i18n="feat-2-tag">Sales</span>
+      </div>
+      <h3 data-i18n="feat-2-title">Sales — channel, dish, category</h3>
+      <p data-i18n="feat-2-body">Dine-in, delivery, takeaway, aggregators. Top dishes and categories with charts.</p>
+      <ul>
+        <li data-i18n="feat-2-li-1">Menu Engineering matrix (2×2)</li>
+        <li data-i18n="feat-2-li-2">ABC analysis of the assortment</li>
+        <li data-i18n="feat-2-li-3">Voided items — who and what</li>
+      </ul>
+    </article>
+
+    <article class="feature-card">
+      <div class="feature-visual">
+        <svg viewBox="0 0 240 100" class="fv-svg" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+          <text x="14" y="20" class="fv-label">RANK · TOP SERVERS</text>
+          <g class="fv-rows">
+            <text x="14" y="44" class="fv-rank">01</text>
+            <text x="38" y="44" class="fv-name">A. KOZHA</text>
+            <rect x="120" y="36" width="100" height="10" class="fv-rowbar w1" />
+            <text x="14" y="64" class="fv-rank">02</text>
+            <text x="38" y="64" class="fv-name">M. TUR</text>
+            <rect x="120" y="56" width="74"  height="10" class="fv-rowbar w2" />
+            <text x="14" y="84" class="fv-rank">03</text>
+            <text x="38" y="84" class="fv-name">N. RA</text>
+            <rect x="120" y="76" width="52"  height="10" class="fv-rowbar w3" />
+          </g>
+        </svg>
+      </div>
+      <div class="feature-card-top">
+        <span class="feature-number mono">03</span>
+        <span class="feature-tag mono" data-i18n="feat-3-tag">Staff</span>
+      </div>
+      <h3 data-i18n="feat-3-title">Staff — shifts and rankings</h3>
+      <p data-i18n="feat-3-body">Shift sheets, revenue per waiter, average check by server, leaderboard.</p>
+      <ul>
+        <li data-i18n="feat-3-li-1">Per-employee revenue</li>
+        <li data-i18n="feat-3-li-2">Average check by server</li>
+        <li data-i18n="feat-3-li-3">Monthly waiter ranking</li>
+      </ul>
+    </article>
+
+    <article class="feature-card">
+      <div class="feature-visual">
+        <svg viewBox="0 0 240 100" class="fv-svg" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+          <text x="14" y="20" class="fv-label">EXPENSE MIX</text>
+          <g transform="translate(56, 60)">
+            <circle r="22" cx="0" cy="0" class="fv-donut-bg" />
+            <circle r="22" cx="0" cy="0" class="fv-donut-seg" stroke-dasharray="58 80" stroke-dashoffset="0" />
+            <circle r="22" cx="0" cy="0" class="fv-donut-seg s2" stroke-dasharray="44 94" stroke-dashoffset="-58" />
+            <circle r="22" cx="0" cy="0" class="fv-donut-seg s3" stroke-dasharray="22 116" stroke-dashoffset="-102" />
+            <text x="0" y="4" text-anchor="middle" class="fv-donut-center">100%</text>
+          </g>
+          <g class="fv-legend">
+            <rect x="108" y="36" width="6" height="6" class="fv-sw fv-sw-1"/>
+            <text x="120" y="42" class="fv-name">Supplies · 42%</text>
+            <rect x="108" y="56" width="6" height="6" class="fv-sw fv-sw-2"/>
+            <text x="120" y="62" class="fv-name">Salaries · 31%</text>
+            <rect x="108" y="76" width="6" height="6" class="fv-sw fv-sw-3"/>
+            <text x="120" y="82" class="fv-name">Rent · 16%</text>
+          </g>
+        </svg>
+      </div>
+      <div class="feature-card-top">
+        <span class="feature-number mono">04</span>
+        <span class="feature-tag mono" data-i18n="feat-4-tag">Expenses</span>
+      </div>
+      <h3 data-i18n="feat-4-title">Expenses — categories and food cost</h3>
+      <p data-i18n="feat-4-body">Manual entry by category. Delete mis-typed records. Food cost calculated per dish.</p>
+      <ul>
+        <li data-i18n="feat-4-li-1">Custom expense categories</li>
+        <li data-i18n="feat-4-li-2">Auto-import from invoices</li>
+        <li data-i18n="feat-4-li-3">Per-dish food cost</li>
+      </ul>
+    </article>
+
+    <article class="feature-card highlight">
+      <div class="feature-visual feature-visual-wide">
+        <svg viewBox="0 0 560 200" class="fv-svg" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+          <!-- Invoice paper -->
+          <g transform="translate(20, 14)">
+            <rect x="0" y="0" width="180" height="172" class="fv-paper" rx="2" />
+            <text x="14" y="22" class="fv-label">SUPPLIER · INVOICE</text>
+            <line x1="14" y1="32" x2="166" y2="32" class="fv-hairline" />
+            <g>
+              <rect x="12" y="42" width="156" height="20" class="fv-ocrbox" />
+              <text x="18" y="56" class="fv-ocrtext">Milk · 8L</text>
+              <text x="158" y="56" text-anchor="end" class="fv-ocrprice">₸ 4 800</text>
+            </g>
+            <g>
+              <rect x="12" y="68" width="156" height="20" class="fv-ocrbox" />
+              <text x="18" y="82" class="fv-ocrtext">Flour · 10kg</text>
+              <text x="158" y="82" text-anchor="end" class="fv-ocrprice">₸ 6 200</text>
+            </g>
+            <g>
+              <rect x="12" y="94" width="156" height="20" class="fv-ocrbox" />
+              <text x="18" y="108" class="fv-ocrtext">Butter · 2kg</text>
+              <text x="158" y="108" text-anchor="end" class="fv-ocrprice">₸ 5 400</text>
+            </g>
+            <line x1="14" y1="138" x2="166" y2="138" class="fv-hairline" />
+            <text x="14" y="158" class="fv-label">TOTAL</text>
+            <text x="166" y="158" text-anchor="end" class="fv-total">₸ 16 400</text>
+          </g>
+          <!-- Arrow + Claude AI -->
+          <g transform="translate(216, 100)">
+            <text x="56" y="-22" text-anchor="middle" class="fv-label">CLAUDE · AI</text>
+            <line x1="0" y1="0" x2="112" y2="0" class="fv-arrow-line" />
+            <polyline points="104,-6 112,0 104,6" class="fv-arrow-head" />
+            <text x="56" y="22" text-anchor="middle" class="fv-label">PARSE · POST</text>
+          </g>
+          <!-- iiko box -->
+          <g transform="translate(360, 14)">
+            <rect x="0" y="0" width="180" height="172" class="fv-iiko" rx="2" />
+            <text x="90" y="48" text-anchor="middle" class="fv-iiko-eyebrow">POSTED TO</text>
+            <text x="90" y="98" text-anchor="middle" class="fv-iiko-name">iiko</text>
+            <line x1="40" y1="118" x2="140" y2="118" class="fv-hairline" />
+            <text x="90" y="138" text-anchor="middle" class="fv-iiko-meta">Doc N° 2026 / 04-281</text>
+            <text x="90" y="158" text-anchor="middle" class="fv-label">✓ NOMENCLATURE LINKED</text>
+          </g>
+        </svg>
+      </div>
+      <div class="feature-card-top">
+        <span class="feature-number mono">05</span>
+        <span class="feature-tag mono" data-i18n="feat-5-tag">Killer feature</span>
+      </div>
+      <h3 data-i18n="feat-5-title">Invoices — photo to iiko in seconds</h3>
+      <p data-i18n="feat-5-body">Send the supplier invoice as a photo or text. Claude AI reads positions, supplier, prices. You review, then post into iiko.</p>
+      <ul>
+        <li data-i18n="feat-5-li-1">Editor: add, delete, edit before posting</li>
+        <li data-i18n="feat-5-li-2">Auto-link to existing nomenclature</li>
+        <li data-i18n="feat-5-li-3">Post / un-post with one tap</li>
+        <li data-i18n="feat-5-li-4">Price-growth history per supplier</li>
+      </ul>
+    </article>
+
+    <article class="feature-card">
+      <div class="feature-visual">
+        <svg viewBox="0 0 240 100" class="fv-svg" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+          <text x="14" y="20" class="fv-label">YEAR · OVER · YEAR</text>
+          <text x="14" y="46" class="fv-yearlabel">2026</text>
+          <rect x="58" y="38" width="158" height="10" class="fv-yoy-this" />
+          <text x="14" y="74" class="fv-yearlabel dim">2025</text>
+          <rect x="58" y="66" width="112" height="10" class="fv-yoy-last" />
+          <text x="216" y="46" text-anchor="end" class="fv-yoy-pct">+ 42%</text>
+        </svg>
+      </div>
+      <div class="feature-card-top">
+        <span class="feature-number mono">06</span>
+        <span class="feature-tag mono" data-i18n="feat-6-tag">Year over year</span>
+      </div>
+      <h3 data-i18n="feat-6-title">YoY — this year vs last</h3>
+      <p data-i18n="feat-6-body">Month by month, with YoY %. Scrollable table, no Excel.</p>
+      <ul>
+        <li data-i18n="feat-6-li-1">Built-in YoY percentages</li>
+        <li data-i18n="feat-6-li-2">Scrollable monthly table</li>
+        <li data-i18n="feat-6-li-3">Charts beside the data</li>
+      </ul>
+    </article>
+
+    <article class="feature-card">
+      <div class="feature-visual">
+        <svg viewBox="0 0 240 100" class="fv-svg" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+          <text x="14" y="20" class="fv-label">5 LOCATIONS · COMBINED</text>
+          <g class="fv-net">
+            <line x1="40"  y1="68" x2="100" y2="42" class="fv-connect"/>
+            <line x1="100" y1="42" x2="170" y2="58" class="fv-connect"/>
+            <line x1="170" y1="58" x2="216" y2="76" class="fv-connect"/>
+            <line x1="40"  y1="68" x2="78"  y2="84" class="fv-connect"/>
+            <line x1="78"  y1="84" x2="170" y2="58" class="fv-connect"/>
+            <circle cx="40"  cy="68" r="7" class="fv-dotmark" />
+            <circle cx="100" cy="42" r="7" class="fv-dotmark primary" />
+            <circle cx="170" cy="58" r="7" class="fv-dotmark" />
+            <circle cx="216" cy="76" r="7" class="fv-dotmark" />
+            <circle cx="78"  cy="84" r="7" class="fv-dotmark" />
+            <circle cx="100" cy="42" r="14" class="fv-dotmark-ring" />
+          </g>
+        </svg>
+      </div>
+      <div class="feature-card-top">
+        <span class="feature-number mono">07</span>
+        <span class="feature-tag mono" data-i18n="feat-7-tag">Multi-branch</span>
+      </div>
+      <h3 data-i18n="feat-7-title">Multi-branch — pick any combination</h3>
+      <p data-i18n="feat-7-body">Branches chip → modal with checkboxes. One branch, several, or all — data merged in parallel.</p>
+      <ul>
+        <li data-i18n="feat-7-li-1">Quick select of any combo</li>
+        <li data-i18n="feat-7-li-2">Parallel aggregation</li>
+        <li data-i18n="feat-7-li-3">Owner sees all, manager sees their own</li>
+      </ul>
+    </article>
+
+    <article class="feature-card">
+      <div class="feature-visual">
+        <svg viewBox="0 0 240 100" class="fv-svg" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+          <text x="14" y="20" class="fv-label">.XLSX · TO TELEGRAM</text>
+          <g class="fv-grid">
+            <rect x="14" y="32" width="180" height="54" class="fv-celloutline" />
+            <rect x="14" y="32" width="180" height="14" class="fv-cellheader" />
+            <line x1="14" y1="46" x2="194" y2="46" class="fv-cellline"/>
+            <line x1="14" y1="60" x2="194" y2="60" class="fv-cellline"/>
+            <line x1="14" y1="74" x2="194" y2="74" class="fv-cellline"/>
+            <line x1="60"  y1="32" x2="60"  y2="86" class="fv-cellline"/>
+            <line x1="106" y1="32" x2="106" y2="86" class="fv-cellline"/>
+            <line x1="152" y1="32" x2="152" y2="86" class="fv-cellline"/>
+          </g>
+          <g transform="translate(214, 60)" class="fv-export">
+            <line x1="0" y1="-8" x2="0" y2="8" class="fv-arrow-line"/>
+            <polyline points="-5,3 0,8 5,3" class="fv-arrow-head"/>
+          </g>
+        </svg>
+      </div>
+      <div class="feature-card-top">
+        <span class="feature-number mono">08</span>
+        <span class="feature-tag mono" data-i18n="feat-8-tag">Export</span>
+      </div>
+      <h3 data-i18n="feat-8-title">Export — any report to Excel</h3>
+      <p data-i18n="feat-8-body">Any report, sent as an .xlsx file straight into the chat by the bot. No broken blob links.</p>
+      <ul>
+        <li data-i18n="feat-8-li-1">.xlsx delivered in Telegram</li>
+        <li data-i18n="feat-8-li-2">Preserved formatting</li>
+        <li data-i18n="feat-8-li-3">Works for every report</li>
+      </ul>
+    </article>
+
+    <article class="feature-card">
+      <div class="feature-visual">
+        <svg viewBox="0 0 240 100" class="fv-svg" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+          <text x="14" y="20" class="fv-label">BEST SUPPLIER · MILK 8L</text>
+          <g class="fv-rows">
+            <text x="14"  y="44" class="fv-rank">01</text>
+            <text x="34"  y="44" class="fv-name">AGRO</text>
+            <rect x="92"  y="36" width="88" height="10" class="fv-rowbar best"/>
+            <text x="226" y="44" text-anchor="end" class="fv-price">₸ 4 800</text>
+
+            <text x="14"  y="64" class="fv-rank">02</text>
+            <text x="34"  y="64" class="fv-name">ALMA</text>
+            <rect x="92"  y="56" width="66" height="10" class="fv-rowbar"/>
+            <text x="226" y="64" text-anchor="end" class="fv-price">₸ 5 100</text>
+
+            <text x="14"  y="84" class="fv-rank">03</text>
+            <text x="34"  y="84" class="fv-name">CITY</text>
+            <rect x="92"  y="76" width="48" height="10" class="fv-rowbar"/>
+            <text x="226" y="84" text-anchor="end" class="fv-price">₸ 5 320</text>
+          </g>
+        </svg>
+      </div>
+      <div class="feature-card-top">
+        <span class="feature-number mono">09</span>
+        <span class="feature-tag mono" data-i18n="feat-9-tag">Suppliers</span>
+      </div>
+      <h3 data-i18n="feat-9-title">Best supplier — per item</h3>
+      <p data-i18n="feat-9-body">For every position, see which supplier sells it cheapest, and by how much. The leader is highlighted in blue.</p>
+      <ul>
+        <li data-i18n="feat-9-li-1">Per-item supplier ranking</li>
+        <li data-i18n="feat-9-li-2">Price history per supplier</li>
+        <li data-i18n="feat-9-li-3">Auto-suggested switch</li>
+      </ul>
+    </article>
+
+    <article class="feature-card">
+      <div class="feature-visual">
+        <svg viewBox="0 0 240 100" class="fv-svg" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+          <text x="14" y="20" class="fv-label">◈ AI · WHY TODAY IS OFF</text>
+          <rect x="14" y="30" width="212" height="60" rx="3" class="fv-aibox"/>
+          <text x="24" y="50" class="fv-aitext">Dinner −22%. Two of your</text>
+          <text x="24" y="66" class="fv-aitext">bestsellers are on stop-list.</text>
+          <text x="24" y="82" class="fv-aitext fv-aitext-strong">Swap by 7 pm.</text>
+        </svg>
+      </div>
+      <div class="feature-card-top">
+        <span class="feature-number mono">10</span>
+        <span class="feature-tag mono" data-i18n="feat-10-tag">AI Analyst</span>
+      </div>
+      <h3 data-i18n="feat-10-title">AI — plain language</h3>
+      <p data-i18n="feat-10-body">Claude reads your numbers and tells you what is wrong with the day, in two sentences. Ask follow-ups in chat.</p>
+      <ul>
+        <li data-i18n="feat-10-li-1">Why today is off</li>
+        <li data-i18n="feat-10-li-2">What to watch tomorrow</li>
+        <li data-i18n="feat-10-li-3">Open-question chat</li>
+      </ul>
+    </article>
+
+    <article class="feature-card">
+      <div class="feature-visual">
+        <svg viewBox="0 0 240 100" class="fv-svg" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+          <text x="14" y="20" class="fv-label">ABC · MENU SHARE</text>
+          <g class="fv-rows">
+            <text x="14"  y="46" class="fv-abc-letter">A</text>
+            <rect x="38"  y="36" width="166" height="11" class="fv-rowbar best"/>
+            <text x="226" y="46" text-anchor="end" class="fv-price">78%</text>
+
+            <text x="14"  y="66" class="fv-abc-letter">B</text>
+            <rect x="38"  y="56" width="60"  height="11" class="fv-rowbar"/>
+            <text x="226" y="66" text-anchor="end" class="fv-price">16%</text>
+
+            <text x="14"  y="86" class="fv-abc-letter">C</text>
+            <rect x="38"  y="76" width="22"  height="11" class="fv-rowbar dim"/>
+            <text x="226" y="86" text-anchor="end" class="fv-price">6%</text>
+          </g>
+        </svg>
+      </div>
+      <div class="feature-card-top">
+        <span class="feature-number mono">11</span>
+        <span class="feature-tag mono" data-i18n="feat-11-tag">ABC / Pareto</span>
+      </div>
+      <h3 data-i18n="feat-11-title">ABC analysis — who carries the menu</h3>
+      <p data-i18n="feat-11-body">Splits the assortment into A / B / C by revenue share. You see at a glance which dishes do the work — and which sit as dead weight.</p>
+      <ul>
+        <li data-i18n="feat-11-li-1">Standard 20 / 30 / 50 split</li>
+        <li data-i18n="feat-11-li-2">Per category or full menu</li>
+        <li data-i18n="feat-11-li-3">Pareto curve overlay</li>
+      </ul>
+    </article>
+
+    <article class="feature-card">
+      <div class="feature-visual">
+        <svg viewBox="0 0 240 100" class="fv-svg" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+          <text x="14" y="20" class="fv-label">PLAN VS FACT · BY WEEK</text>
+          <g class="fv-rows">
+            <text x="14"  y="44" class="fv-name">W1</text>
+            <rect x="44"  y="36" width="116" height="10" class="fv-rowbar best"/>
+            <text x="226" y="44" text-anchor="end" class="fv-price">104%</text>
+
+            <text x="14"  y="64" class="fv-name">W2</text>
+            <rect x="44"  y="56" width="84"  height="10" class="fv-rowbar dim"/>
+            <text x="226" y="64" text-anchor="end" class="fv-price">88%</text>
+
+            <text x="14"  y="84" class="fv-name">W3</text>
+            <rect x="44"  y="76" width="132" height="10" class="fv-rowbar best"/>
+            <text x="226" y="84" text-anchor="end" class="fv-price">112%</text>
+          </g>
+          <line x1="148" y1="30" x2="148" y2="90" class="fv-connect"/>
+        </svg>
+      </div>
+      <div class="feature-card-top">
+        <span class="feature-number mono">12</span>
+        <span class="feature-tag mono" data-i18n="feat-12-tag">Sales plan</span>
+      </div>
+      <h3 data-i18n="feat-12-title">Sales plan — plan vs fact</h3>
+      <p data-i18n="feat-12-body">Upload the yearly plan from a template — the system pulls the fact from iiko and shows weekly completion by channel. No manual reconciliation tables.</p>
+      <ul>
+        <li data-i18n="feat-12-li-1">By basket: Delivery · Dine-in/Takeout · Aggregators</li>
+        <li data-i18n="feat-12-li-2">Weekly progress with colour highlight</li>
+        <li data-i18n="feat-12-li-3">Fact from iiko, % calculated for you · per branch</li>
+      </ul>
+    </article>
+
+    <article class="feature-card">
+      <div class="feature-visual">
+        <svg viewBox="0 0 240 100" class="fv-svg" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+          <text x="14" y="20" class="fv-label">COURIERS · LATE %</text>
+          <g class="fv-rows">
+            <text x="14"  y="44" class="fv-rank">01</text>
+            <text x="34"  y="44" class="fv-name">IVAN</text>
+            <rect x="92"  y="36" width="30"  height="10" class="fv-rowbar best"/>
+            <text x="226" y="44" text-anchor="end" class="fv-price">6%</text>
+
+            <text x="14"  y="64" class="fv-rank">02</text>
+            <text x="34"  y="64" class="fv-name">OLEG</text>
+            <rect x="92"  y="56" width="68"  height="10" class="fv-rowbar"/>
+            <text x="226" y="64" text-anchor="end" class="fv-price">14%</text>
+
+            <text x="14"  y="84" class="fv-rank">03</text>
+            <text x="34"  y="84" class="fv-name">RUST</text>
+            <rect x="92"  y="76" width="120" height="10" class="fv-rowbar dim"/>
+            <text x="226" y="84" text-anchor="end" class="fv-price">28%</text>
+          </g>
+        </svg>
+      </div>
+      <div class="feature-card-top">
+        <span class="feature-number mono">13</span>
+        <span class="feature-tag mono" data-i18n="feat-13-tag">Couriers</span>
+      </div>
+      <h3 data-i18n="feat-13-title">Courier analytics — who slows delivery</h3>
+      <p data-i18n="feat-13-body">A full picture for every courier over 30 days, straight from iiko — nothing to enter. See who drives fast and who misses the window.</p>
+      <ul>
+        <li data-i18n="feat-13-li-1">Avg time on the road and avg delay, in minutes</li>
+        <li data-i18n="feat-13-li-2">Late % per courier with a colour indicator</li>
+        <li data-i18n="feat-13-li-3">Ranking by deliveries · branch summary</li>
+      </ul>
+    </article>
+
+    <article class="feature-card">
+      <div class="feature-visual">
+        <svg viewBox="0 0 240 100" class="fv-svg" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+          <text x="14" y="20" class="fv-label">SEGMENTS · RETENTION 41%</text>
+          <g class="fv-rows">
+            <text x="14"  y="44" class="fv-name">UNIQUE</text>
+            <rect x="92"  y="36" width="118" height="10" class="fv-rowbar dim"/>
+            <text x="226" y="44" text-anchor="end" class="fv-price">1×</text>
+
+            <text x="14"  y="64" class="fv-name">LOYAL</text>
+            <rect x="92"  y="56" width="74"  height="10" class="fv-rowbar"/>
+            <text x="226" y="64" text-anchor="end" class="fv-price">2+</text>
+
+            <text x="14"  y="84" class="fv-name">VIP</text>
+            <rect x="92"  y="76" width="30"  height="10" class="fv-rowbar best"/>
+            <text x="226" y="84" text-anchor="end" class="fv-price">10+</text>
+          </g>
+        </svg>
+      </div>
+      <div class="feature-card-top">
+        <span class="feature-number mono">14</span>
+        <span class="feature-tag mono" data-i18n="feat-14-tag">Customers</span>
+      </div>
+      <h3 data-i18n="feat-14-title">Customer base — segments &amp; loyalty</h3>
+      <p data-i18n="feat-14-body">Segment guests by order count — from iiko (by delivery phone numbers) or from your own sheet. Find who actually brings the money.</p>
+      <ul>
+        <li data-i18n="feat-14-li-1">Segments: Unique (1) · Loyal (2+) · VIP (10+)</li>
+        <li data-i18n="feat-14-li-2">Repeat-order rate (retention) and average LTV</li>
+        <li data-i18n="feat-14-li-3">Top customers by name · source: iiko or Google Sheet</li>
+      </ul>
+    </article>
+
+    <article class="feature-card">
+      <div class="feature-visual">
+        <svg viewBox="0 0 240 100" class="fv-svg" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+          <text x="14" y="18" class="fv-label">PEAK HOURS · DAY × HOUR</text>
+          <g class="fv-heat">
+            <rect x="40" y="26" width="22" height="8" class="fv-rowbar" fill-opacity="0.12"/>
+            <rect x="64" y="26" width="22" height="8" class="fv-rowbar" fill-opacity="0.22"/>
+            <rect x="88" y="26" width="22" height="8" class="fv-rowbar" fill-opacity="0.6"/>
+            <rect x="112" y="26" width="22" height="8" class="fv-rowbar" fill-opacity="0.3"/>
+            <rect x="136" y="26" width="22" height="8" class="fv-rowbar" fill-opacity="0.45"/>
+            <rect x="160" y="26" width="22" height="8" class="fv-rowbar" fill-opacity="0.8"/>
+            <rect x="184" y="26" width="22" height="8" class="fv-rowbar" fill-opacity="0.5"/>
+            <text x="14" y="33" class="fv-name">MON</text>
+
+            <rect x="40" y="36" width="22" height="8" class="fv-rowbar" fill-opacity="0.12"/>
+            <rect x="64" y="36" width="22" height="8" class="fv-rowbar" fill-opacity="0.28"/>
+            <rect x="88" y="36" width="22" height="8" class="fv-rowbar" fill-opacity="0.7"/>
+            <rect x="112" y="36" width="22" height="8" class="fv-rowbar" fill-opacity="0.32"/>
+            <rect x="136" y="36" width="22" height="8" class="fv-rowbar" fill-opacity="0.5"/>
+            <rect x="160" y="36" width="22" height="8" class="fv-rowbar" fill-opacity="0.9"/>
+            <rect x="184" y="36" width="22" height="8" class="fv-rowbar" fill-opacity="0.6"/>
+            <text x="14" y="43" class="fv-name">WED</text>
+
+            <rect x="40" y="46" width="22" height="8" class="fv-rowbar best" fill-opacity="0.25"/>
+            <rect x="64" y="46" width="22" height="8" class="fv-rowbar best" fill-opacity="0.35"/>
+            <rect x="88" y="46" width="22" height="8" class="fv-rowbar best" fill-opacity="0.85"/>
+            <rect x="112" y="46" width="22" height="8" class="fv-rowbar best" fill-opacity="0.45"/>
+            <rect x="136" y="46" width="22" height="8" class="fv-rowbar best" fill-opacity="0.65"/>
+            <rect x="160" y="46" width="22" height="8" class="fv-rowbar best" fill-opacity="1"/>
+            <rect x="184" y="46" width="22" height="8" class="fv-rowbar best" fill-opacity="0.8"/>
+            <text x="14" y="53" class="fv-name">FRI</text>
+
+            <rect x="40" y="56" width="22" height="8" class="fv-rowbar best" fill-opacity="0.3"/>
+            <rect x="64" y="56" width="22" height="8" class="fv-rowbar best" fill-opacity="0.45"/>
+            <rect x="88" y="56" width="22" height="8" class="fv-rowbar best" fill-opacity="0.75"/>
+            <rect x="112" y="56" width="22" height="8" class="fv-rowbar best" fill-opacity="0.55"/>
+            <rect x="136" y="56" width="22" height="8" class="fv-rowbar best" fill-opacity="0.7"/>
+            <rect x="160" y="56" width="22" height="8" class="fv-rowbar best" fill-opacity="1"/>
+            <rect x="184" y="56" width="22" height="8" class="fv-rowbar best" fill-opacity="0.9"/>
+            <text x="14" y="63" class="fv-name">SAT</text>
+
+            <rect x="40" y="66" width="22" height="8" class="fv-rowbar dim" fill-opacity="0.3"/>
+            <rect x="64" y="66" width="22" height="8" class="fv-rowbar" fill-opacity="0.3"/>
+            <rect x="88" y="66" width="22" height="8" class="fv-rowbar" fill-opacity="0.6"/>
+            <rect x="112" y="66" width="22" height="8" class="fv-rowbar" fill-opacity="0.4"/>
+            <rect x="136" y="66" width="22" height="8" class="fv-rowbar" fill-opacity="0.5"/>
+            <rect x="160" y="66" width="22" height="8" class="fv-rowbar" fill-opacity="0.8"/>
+            <rect x="184" y="66" width="22" height="8" class="fv-rowbar" fill-opacity="0.55"/>
+            <text x="14" y="73" class="fv-name">SUN</text>
+
+            <text x="40"  y="86" class="fv-label">11</text>
+            <text x="88"  y="86" class="fv-label">14</text>
+            <text x="136" y="86" class="fv-label">18</text>
+            <text x="184" y="86" class="fv-label">21</text>
+          </g>
+        </svg>
+      </div>
+      <div class="feature-card-top">
+        <span class="feature-number mono">15</span>
+        <span class="feature-tag mono" data-i18n="feat-15-tag">Peak hours</span>
+      </div>
+      <h3 data-i18n="feat-15-title">Peak hours — a real heatmap of the week</h3>
+      <p data-i18n="feat-15-body">A day × hour grid coloured by load — the darker the cell, the busier that hour. See at a glance when the rushes hit and when the floor sits empty, so you staff and schedule against reality instead of a hunch.</p>
+      <ul>
+        <li data-i18n="feat-15-li-1">Seven days × hours, coloured by load intensity</li>
+        <li data-i18n="feat-15-li-2">Rush windows and dead hours spotted instantly</li>
+        <li data-i18n="feat-15-li-3">For staffing and clients · per branch, straight from iiko</li>
+      </ul>
+    </article>
+
+  </div>
+</section>
+
+<!-- ========== ONBOARDING + WHY TELEGRAM ========== -->
+<section class="onboarding-section section" id="onboarding">
+  <div class="section-header">
+    <span class="section-index">05</span>
+    <span class="section-title" data-i18n="onboarding-title">Onboarding</span>
+    <span class="section-rule"></span>
+  </div>
+
+  <div class="onboarding-grid">
+    <div class="onboarding-left">
+      <h3 class="onboarding-heading" data-i18n="onboarding-heading">Three steps. Under two minutes.</h3>
+      <p class="onboarding-sub" data-i18n="onboarding-sub">No installs, no app store, no password to remember. iikoAnalytics lives inside Telegram.</p>
+      <ol class="steps">
+        <li>
+          <span class="step-num mono">01</span>
+          <div>
+            <h4 data-i18n="step-1-title">Server URL</h4>
+            <p data-i18n="step-1-body">Paste your iiko server URL (the one your iikoOffice uses).</p>
+          </div>
+        </li>
+        <li>
+          <span class="step-num mono">02</span>
+          <div>
+            <h4 data-i18n="step-2-title">Login</h4>
+            <p data-i18n="step-2-body">Your existing iiko username. No new accounts to create.</p>
+          </div>
+        </li>
+        <li>
+          <span class="step-num mono">03</span>
+          <div>
+            <h4 data-i18n="step-3-title">Password → branches</h4>
+            <p data-i18n="step-3-body">Enter password, pick the branches you want to see. Done.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+
+    <div class="onboarding-right">
+      <div class="trust-block">
+        <h4 class="trust-heading" data-i18n="trust-title">Security · the details</h4>
+        <ul class="trust-list">
+          <li><span class="trust-dot"></span><span data-i18n="trust-1">Branch isolation lives in iiko itself — a manager sees only their location, an owner sees the network. No manual role-mapping.</span></li>
+          <li><span class="trust-dot"></span><span data-i18n="trust-2">Full logout wipes credentials from the database and the device.</span></li>
+          <li><span class="trust-dot"></span><span data-i18n="trust-3">Mini App auth via Telegram initData (HMAC signature). No separate passwords.</span></li>
+          <li><span class="trust-dot"></span><span data-i18n="trust-4">Backend in FastAPI, persistent on Render, integration with iiko Server REST 9.x.</span></li>
+        </ul>
+      </div>
+
+      <div class="for-block">
+        <h4 class="for-heading" data-i18n="for-title">Built for</h4>
+        <ul class="for-list">
+          <li>
+            <span class="for-mark">◈</span>
+            <span data-i18n="for-1">Restaurant chain owners (2–20 locations)</span>
+          </li>
+          <li>
+            <span class="for-mark">◈</span>
+            <span data-i18n="for-2">Managers running a single venue</span>
+          </li>
+          <li>
+            <span class="for-mark">◈</span>
+            <span data-i18n="for-3">Accountants and buyers who post invoices</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="why-block">
+        <h4 class="why-heading" data-i18n="why-title">Why Telegram, not an app</h4>
+        <div class="why-grid">
+          <span data-i18n="why-1">No installs · no App Store / Google Play</span>
+          <span data-i18n="why-2">Works on iOS, Android, desktop — same UI</span>
+          <span data-i18n="why-3">Notifications already built in</span>
+          <span data-i18n="why-4">Sign-in in one tap, via your Telegram account</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== BIG CTA ========== -->
+<section class="open-section section" id="open">
+  <div class="open-inner">
+    <span class="open-eyebrow mono" data-i18n="open-eyebrow">Catalogue · 01 / iikoAnalytics · v1.0</span>
+    <h2 class="open-headline">
+      <span data-i18n="open-head-1">Open your dashboard</span>
+      <br />
+      <span class="serif-italic" data-i18n="open-head-2">now.</span>
+    </h2>
+    <p class="open-sub" data-i18n="open-sub">Three steps to connect. Works in any Telegram client. Free to try.</p>
+
+    <a href="https://t.me/iikoanalyzebot" target="_blank" rel="noopener" class="cta-massive" data-cursor="link">
+      <span class="cta-massive-side">
+        <span class="cta-massive-label mono" data-i18n="cta-channel">Telegram Mini App</span>
+        <span class="cta-massive-handle">@iikoanalyzebot</span>
+      </span>
+      <span class="cta-massive-main">
+        <span data-i18n="cta-massive-text">Open in Telegram</span>
+        <span class="cta-massive-arrow">⟶</span>
+      </span>
+    </a>
+
+    <div class="open-footnote mono">
+      <span data-i18n="open-foot-1">No app to install</span>
+      <span class="dot-sep">·</span>
+      <span data-i18n="open-foot-2">No card on file</span>
+      <span class="dot-sep">·</span>
+      <span data-i18n="open-foot-3">Cancel anytime</span>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact section" id="contact">
+  <div class="section-header">
+    <span class="section-index">06</span>
+    <span class="section-title" data-i18n="contact-title">Contact · Wire Group</span>
+    <span class="section-rule"></span>
+  </div>
+
+  <div class="contact-grid">
+    <div class="contact-statement">
+      <h2 class="contact-headline" data-split>
+        <span data-i18n="contact-headline">For pilots, integrations, or a quiet conversation about your restaurant.</span>
+      </h2>
+      <p class="contact-sub" data-i18n="contact-sub">Reach the studio directly. We answer within one working day.</p>
+    </div>
+
+    <div class="contact-channels">
+      <a href="https://t.me/wiregroup" target="_blank" rel="noopener" class="channel" data-cursor="link">
+        <span class="channel-index">01</span>
+        <span class="channel-name">Telegram</span>
+        <span class="channel-handle">@wiregroup</span>
+        <span class="channel-arrow">⟶</span>
+      </a>
+      <a href="https://wa.me/00000000000" target="_blank" rel="noopener" class="channel" data-cursor="link">
+        <span class="channel-index">02</span>
+        <span class="channel-name">WhatsApp</span>
+        <span class="channel-handle">Direct line</span>
+        <span class="channel-arrow">⟶</span>
+      </a>
+      <a href="mailto:hello@wiregroup.studio" class="channel" data-cursor="link">
+        <span class="channel-index">03</span>
+        <span class="channel-name">Email</span>
+        <span class="channel-handle">hello@wiregroup.studio</span>
+        <span class="channel-arrow">⟶</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-mark">
+    <span class="footer-mark-symbol">
+      <svg viewBox="0 0 40 40" aria-hidden="true">
+        <circle cx="20" cy="20" r="18" />
+        <path d="M10 22 Q 16 14 20 22 T 30 22" />
+      </svg>
+    </span>
+    <span>WIRE GROUP · 2026 — <span data-i18n="footer-note">An independent studio</span></span>
+  </div>
+  <div class="footer-right">
+    <span data-i18n="footer-build">Hand built · No templates</span>
+    <span class="footer-time" id="footerTime">— : —</span>
+  </div>
+</footer>
+
+</main>
+
+<script src="main.js"></script>
+
+</body>
+</html>

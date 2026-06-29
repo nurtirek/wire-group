@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Wire Group — AI Services · Bespoke AI for your business</title>
+<meta name="description" content="Wire Group AI Services — bespoke bots, sites and process automation. Turnkey AI bots, site + bot bundles, and process automation in 1–4 weeks." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Manrope:wght@200;300;400;500;600&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body class="page-ai-services">
+
+<div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+<div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+
+<header class="topbar">
+  <a href="index.html" class="topbar-mark" data-cursor="link" aria-label="Wire Group home">
+    <span class="topbar-mark-symbol">
+      <svg viewBox="0 0 40 40" aria-hidden="true">
+        <circle cx="20" cy="20" r="18" />
+        <path d="M10 22 Q 16 14 20 22 T 30 22" />
+      </svg>
+    </span>
+    <span class="topbar-mark-text">WIRE&nbsp;GROUP</span>
+  </a>
+
+  <nav class="topbar-nav">
+    <span class="topbar-nav-status">
+      <span class="topbar-dot"></span>
+      <span data-i18n="status">Available for select work · 2026</span>
+    </span>
+  </nav>
+
+  <div class="topbar-actions">
+    <button class="lang-toggle" id="langToggle" data-cursor="link" aria-label="Toggle language">
+      <span class="lang-current">EN</span>
+      <span class="lang-divider"></span>
+      <span class="lang-other">RU</span>
+    </button>
+    <button class="menu-button" id="menuOpen" data-cursor="link" aria-label="Open menu">
+      <span class="menu-button-lines"><span></span><span></span></span>
+      <span class="menu-button-label" data-i18n="menu">Menu</span>
+    </button>
+  </div>
+</header>
+
+<!-- Menu overlay -->
+<div class="menu" id="menu" aria-hidden="true">
+  <div class="menu-inner">
+    <div class="menu-top">
+      <span class="menu-eyebrow" data-i18n="menu-eyebrow">Navigation — Wire Group</span>
+      <button class="menu-close" id="menuClose" data-cursor="link" aria-label="Close menu">
+        <span class="menu-close-x"><span></span><span></span></span>
+        <span data-i18n="close">Close</span>
+      </button>
+    </div>
+
+    <nav class="menu-list">
+      <a href="index.html#hero" class="menu-item" data-cursor="link">
+        <span class="menu-index">01</span>
+        <span class="menu-label" data-i18n="nav-home">Home</span>
+        <span class="menu-arrow">→</span>
+      </a>
+      <a href="index.html#catalogue" class="menu-item" data-cursor="link">
+        <span class="menu-index">02</span>
+        <span class="menu-label" data-i18n="nav-catalog">Catalogue</span>
+        <span class="menu-arrow">→</span>
+      </a>
+      <a href="index.html#contact" class="menu-item" data-cursor="link">
+        <span class="menu-index">03</span>
+        <span class="menu-label" data-i18n="nav-contact">Contact</span>
+        <span class="menu-arrow">→</span>
+      </a>
+    </nav>
+
+    <div class="menu-foot">
+      <div class="menu-foot-block">
+        <span class="menu-foot-label" data-i18n="direct">Direct</span>
+        <a href="mailto:hello@wiregroup.studio" data-cursor="link">hello@wiregroup.studio</a>
+      </div>
+      <div class="menu-foot-block">
+        <span class="menu-foot-label" data-i18n="channels">Channels</span>
+        <div class="menu-foot-links">
+          <a href="https://t.me/wiregroup" target="_blank" rel="noopener" data-cursor="link">Telegram</a>
+          <a href="https://wa.me/00000000000" target="_blank" rel="noopener" data-cursor="link">WhatsApp</a>
+        </div>
+      </div>
+      <div class="menu-foot-block">
+        <span class="menu-foot-label" data-i18n="meridian">Meridian</span>
+        <span class="menu-clock" id="menuClock">— : — : —</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<main class="catalog-page">
+
+<!-- =================  BESPOKE AI SERVICES  ================= -->
+<section class="ai-services" id="ai-services" aria-label="Bespoke AI solutions">
+  <canvas class="ai-bg-particles" aria-hidden="true"></canvas>
+
+  <header class="ai-services-intro">
+    <span class="ai-services-kicker mono" data-i18n="ai-kicker">Catalogue · Volume 02 · Services</span>
+    <h2 class="ai-services-headline">
+      <span data-i18n="ai-headline-1">Bespoke AI solutions</span>
+      <span class="serif-italic" data-i18n="ai-headline-2">for your business.</span>
+    </h2>
+    <p class="ai-services-sub" data-i18n="ai-sub">We pick and build the right tool for your task — bot, site, or process automation.</p>
+  </header>
+
+  <div class="ai-packages">
+    <canvas class="ai-3d-canvas" aria-hidden="true"></canvas>
+
+    <article class="ai-pack" data-cursor="view" data-modal="ai-modal-1" role="button" tabindex="0" aria-haspopup="dialog">
+      <span class="frame-corner tl"></span>
+      <span class="frame-corner tr"></span>
+      <span class="frame-corner bl"></span>
+      <span class="frame-corner br"></span>
+
+      <div class="ai-pack-3d" data-3d="sphere">
+        <div class="ai-pack-3d-fallback" aria-hidden="true">
+          <span class="fb-sphere"></span>
+          <span class="fb-orbit"></span>
+          <span class="fb-orbit fb-orbit-2"></span>
+        </div>
+      </div>
+
+      <div class="ai-pack-meta">
+        <span class="ai-pack-num mono">01</span>
+        <span class="ai-pack-time mono" data-i18n="ai-1-time">2–3 weeks</span>
+      </div>
+      <h3 class="ai-pack-title" data-i18n="ai-1-title">Turnkey AI bot</h3>
+      <p class="ai-pack-body" data-i18n="ai-1-body">A chat-bot for WhatsApp and Telegram. Takes orders, answers 24/7, integrates with CRM or your POS.</p>
+      <ul class="ai-pack-tags">
+        <li>WhatsApp</li><li>Telegram</li><li>CRM</li><li>iiko</li>
+      </ul>
+      <span class="ai-pack-more mono" data-i18n="ai-more">Details ⟶</span>
+    </article>
+
+    <article class="ai-pack" data-cursor="view" data-modal="ai-modal-2" role="button" tabindex="0" aria-haspopup="dialog">
+      <span class="frame-corner tl"></span>
+      <span class="frame-corner tr"></span>
+      <span class="frame-corner bl"></span>
+      <span class="frame-corner br"></span>
+
+      <div class="ai-pack-3d" data-3d="cube">
+        <div class="ai-pack-3d-fallback" aria-hidden="true">
+          <span class="fb-cube"><span></span><span></span><span></span><span></span><span></span><span></span></span>
+        </div>
+      </div>
+
+      <div class="ai-pack-meta">
+        <span class="ai-pack-num mono">02</span>
+        <span class="ai-pack-time mono" data-i18n="ai-2-time">3–4 weeks</span>
+      </div>
+      <h3 class="ai-pack-title" data-i18n="ai-2-title">Site + AI bot</h3>
+      <p class="ai-pack-body" data-i18n="ai-2-body">A catalogue site or landing — together with a chat-bot that converts visitors into orders.</p>
+      <ul class="ai-pack-tags">
+        <li>Landing</li><li>Catalogue</li><li>Bot</li><li>Online orders</li>
+      </ul>
+      <span class="ai-pack-more mono" data-i18n="ai-more">Details ⟶</span>
+    </article>
+
+    <article class="ai-pack" data-cursor="view" data-modal="ai-modal-3" role="button" tabindex="0" aria-haspopup="dialog">
+      <span class="frame-corner tl"></span>
+      <span class="frame-corner tr"></span>
+      <span class="frame-corner bl"></span>
+      <span class="frame-corner br"></span>
+
+      <div class="ai-pack-3d" data-3d="torus">
+        <div class="ai-pack-3d-fallback" aria-hidden="true">
+          <span class="fb-torus"></span>
+        </div>
+      </div>
+
+      <div class="ai-pack-meta">
+        <span class="ai-pack-num mono">03</span>
+        <span class="ai-pack-time mono" data-i18n="ai-3-time">1–2 weeks</span>
+      </div>
+      <h3 class="ai-pack-title" data-i18n="ai-3-title">Process automation</h3>
+      <p class="ai-pack-body" data-i18n="ai-3-body">Notifications, sales funnels, integrations between systems. Saves hours per week.</p>
+      <ul class="ai-pack-tags">
+        <li>Make</li><li>n8n</li><li>Webhook</li><li>CRM</li>
+      </ul>
+      <span class="ai-pack-more mono" data-i18n="ai-more">Details ⟶</span>
+    </article>
+  </div>
+
+  <!-- ============ Modal: Turnkey AI bot ============ -->
+  <div class="ai-modal" id="ai-modal-1" role="dialog" aria-modal="true" aria-labelledby="ai-modal-1-title" aria-hidden="true">
+    <div class="ai-modal-backdrop" data-modal-close></div>
+    <div class="ai-modal-panel">
+      <span class="frame-corner tl"></span>
+      <span class="frame-corner tr"></span>
+      <span class="frame-corner bl"></span>
+      <span class="frame-corner br"></span>
+
+      <button class="ai-modal-close" data-modal-close aria-label="Close">
+        <span class="ai-modal-close-x"><span></span><span></span></span>
+        <span class="mono" data-i18n="close">Close</span>
+      </button>
+
+      <div class="ai-modal-head">
+        <span class="ai-modal-eyebrow mono">
+          <span data-i18n="ai-pack-label">Package</span> · 01
+          <span class="ai-modal-eyebrow-sep">·</span>
+          <span data-i18n="ai-1-time">2–3 weeks</span>
+        </span>
+        <h3 class="ai-modal-title" id="ai-modal-1-title" data-i18n="ai-1-title">Turnkey AI bot</h3>
+        <p class="ai-modal-lead" data-i18n="ai-1-body">A chat-bot for WhatsApp and Telegram. Takes orders, answers 24/7, integrates with CRM or your POS.</p>
+      </div>
+
+      <div class="ai-modal-body">
+        <div class="ai-modal-block">
+          <span class="ai-modal-block-label mono" data-i18n="ai-includes">What's included</span>
+          <ul class="ai-modal-list">
+            <li data-i18n="ai-1-list-1">Conversation flow tailored to your business — 5–8 branches</li>
+            <li data-i18n="ai-1-list-2">WhatsApp Business API and Telegram setup</li>
+            <li data-i18n="ai-1-list-3">Knowledge base — bot answers from your documents and FAQ</li>
+            <li data-i18n="ai-1-list-4">Order intake — handoff to a manager or fully automated</li>
+            <li data-i18n="ai-1-list-5">CRM integration (amoCRM, Bitrix24) or iiko / POS</li>
+            <li data-i18n="ai-1-list-6">Admin panel — view dialogues, edit answers, export leads</li>
+            <li data-i18n="ai-1-list-7">Two weeks of post-launch tuning</li>
+          </ul>
+        </div>
+
+        <div class="ai-modal-block">
+          <span class="ai-modal-block-label mono" data-i18n="ai-stack">Stack & integrations</span>
+          <ul class="ai-pack-tags ai-modal-tags">
+            <li>WhatsApp</li><li>Telegram</li><li>amoCRM</li><li>Bitrix24</li><li>iiko</li><li>Claude</li>
+          </ul>
+        </div>
+
+        <div class="ai-modal-block">
+          <span class="ai-modal-block-label mono" data-i18n="ai-out-label">Deliverables</span>
+          <p class="ai-modal-out" data-i18n="ai-1-out">A working bot on both channels, full access, brief onboarding for your team.</p>
+        </div>
+      </div>
+
+      <a href="mailto:hello@wiregroup.studio?subject=AI%20bot%20—%20discuss%20a%20project" class="ai-modal-cta" data-cursor="link">
+        <span data-i18n="ai-modal-cta">Discuss your project</span>
+        <span class="ai-cta-arrow">⟶</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- ============ Modal: Site + AI bot ============ -->
+  <div class="ai-modal" id="ai-modal-2" role="dialog" aria-modal="true" aria-labelledby="ai-modal-2-title" aria-hidden="true">
+    <div class="ai-modal-backdrop" data-modal-close></div>
+    <div class="ai-modal-panel">
+      <span class="frame-corner tl"></span>
+      <span class="frame-corner tr"></span>
+      <span class="frame-corner bl"></span>
+      <span class="frame-corner br"></span>
+
+      <button class="ai-modal-close" data-modal-close aria-label="Close">
+        <span class="ai-modal-close-x"><span></span><span></span></span>
+        <span class="mono" data-i18n="close">Close</span>
+      </button>
+
+      <div class="ai-modal-head">
+        <span class="ai-modal-eyebrow mono">
+          <span data-i18n="ai-pack-label">Package</span> · 02
+          <span class="ai-modal-eyebrow-sep">·</span>
+          <span data-i18n="ai-2-time">3–4 weeks</span>
+        </span>
+        <h3 class="ai-modal-title" id="ai-modal-2-title" data-i18n="ai-2-title">Site + AI bot</h3>
+        <p class="ai-modal-lead" data-i18n="ai-2-body">A catalogue site or landing — together with a chat-bot that converts visitors into orders.</p>
+      </div>
+
+      <div class="ai-modal-body">
+        <div class="ai-modal-block">
+          <span class="ai-modal-block-label mono" data-i18n="ai-includes">What's included</span>
+          <ul class="ai-modal-list">
+            <li data-i18n="ai-2-list-1">Custom design on-brand — mobile-first</li>
+            <li data-i18n="ai-2-list-2">Responsive build, on-page SEO, sub-2s page speed</li>
+            <li data-i18n="ai-2-list-3">Embedded AI assistant — answers visitors directly in the site chat</li>
+            <li data-i18n="ai-2-list-4">Lead-capture flows — contact and order details</li>
+            <li data-i18n="ai-2-list-5">One bot across all channels — site, WhatsApp, Telegram</li>
+            <li data-i18n="ai-2-list-6">CRM integration — every lead lands in your pipeline</li>
+            <li data-i18n="ai-2-list-7">Domain, hosting and analytics — all configured</li>
+          </ul>
+        </div>
+
+        <div class="ai-modal-block">
+          <span class="ai-modal-block-label mono" data-i18n="ai-stack">Stack & integrations</span>
+          <ul class="ai-pack-tags ai-modal-tags">
+            <li>Landing</li><li>Catalogue</li><li>AI chat</li><li>WhatsApp</li><li>Telegram</li><li>CRM</li>
+          </ul>
+        </div>
+
+        <div class="ai-modal-block">
+          <span class="ai-modal-block-label mono" data-i18n="ai-out-label">Deliverables</span>
+          <p class="ai-modal-out" data-i18n="ai-2-out">Live website, embedded AI assistant, connected CRM lead pipeline.</p>
+        </div>
+      </div>
+
+      <a href="mailto:hello@wiregroup.studio?subject=Site%20%2B%20AI%20bot%20—%20discuss%20a%20project" class="ai-modal-cta" data-cursor="link">
+        <span data-i18n="ai-modal-cta">Discuss your project</span>
+        <span class="ai-cta-arrow">⟶</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- ============ Modal: Process automation ============ -->
+  <div class="ai-modal" id="ai-modal-3" role="dialog" aria-modal="true" aria-labelledby="ai-modal-3-title" aria-hidden="true">
+    <div class="ai-modal-backdrop" data-modal-close></div>
+    <div class="ai-modal-panel">
+      <span class="frame-corner tl"></span>
+      <span class="frame-corner tr"></span>
+      <span class="frame-corner bl"></span>
+      <span class="frame-corner br"></span>
+
+      <button class="ai-modal-close" data-modal-close aria-label="Close">
+        <span class="ai-modal-close-x"><span></span><span></span></span>
+        <span class="mono" data-i18n="close">Close</span>
+      </button>
+
+      <div class="ai-modal-head">
+        <span class="ai-modal-eyebrow mono">
+          <span data-i18n="ai-pack-label">Package</span> · 03
+          <span class="ai-modal-eyebrow-sep">·</span>
+          <span data-i18n="ai-3-time">1–2 weeks</span>
+        </span>
+        <h3 class="ai-modal-title" id="ai-modal-3-title" data-i18n="ai-3-title">Process automation</h3>
+        <p class="ai-modal-lead" data-i18n="ai-3-body">Notifications, sales funnels, integrations between systems. Saves hours per week.</p>
+      </div>
+
+      <div class="ai-modal-body">
+        <div class="ai-modal-block">
+          <span class="ai-modal-block-label mono" data-i18n="ai-includes">What's included</span>
+          <ul class="ai-modal-list">
+            <li data-i18n="ai-3-list-1">Workflow audit — find what eats time in your team</li>
+            <li data-i18n="ai-3-list-2">Notifications to Telegram, email or Slack on the right events</li>
+            <li data-i18n="ai-3-list-3">Integrations across CRM, POS, sheets, accounting (Make / n8n)</li>
+            <li data-i18n="ai-3-list-4">Auto-funnels — follow-ups, reminders, status changes</li>
+            <li data-i18n="ai-3-list-5">Daily and weekly digests — sales, stock, KPI in one report</li>
+            <li data-i18n="ai-3-list-6">Webhook triggers tied to your existing systems</li>
+            <li data-i18n="ai-3-list-7">Documentation — your team can edit flows themselves</li>
+          </ul>
+        </div>
+
+        <div class="ai-modal-block">
+          <span class="ai-modal-block-label mono" data-i18n="ai-stack">Stack & integrations</span>
+          <ul class="ai-pack-tags ai-modal-tags">
+            <li>Make</li><li>n8n</li><li>Webhook</li><li>Zapier</li><li>CRM</li><li>iiko</li>
+          </ul>
+        </div>
+
+        <div class="ai-modal-block">
+          <span class="ai-modal-block-label mono" data-i18n="ai-out-label">Deliverables</span>
+          <p class="ai-modal-out" data-i18n="ai-3-out">Live automations, full documentation, one week of post-launch support.</p>
+        </div>
+      </div>
+
+      <a href="mailto:hello@wiregroup.studio?subject=Process%20automation%20—%20discuss%20a%20project" class="ai-modal-cta" data-cursor="link">
+        <span data-i18n="ai-modal-cta">Discuss your project</span>
+        <span class="ai-cta-arrow">⟶</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="ai-cta">
+    <div class="ai-cta-text">
+      <h4 class="ai-cta-title" data-i18n="ai-cta-title">Didn't find your case?</h4>
+      <p class="ai-cta-sub" data-i18n="ai-cta-sub">Describe your task — we'll propose a solution.</p>
+    </div>
+    <a href="mailto:hello@wiregroup.studio" class="ai-cta-btn" data-cursor="link">
+      <span data-i18n="ai-cta-btn">Write to us</span>
+      <span class="ai-cta-arrow">⟶</span>
+    </a>
+  </div>
+</section>
+
+<section class="section" style="padding-top: 60px;">
+  <a href="index.html#catalogue" class="link-arrow" data-cursor="link">
+    <span class="arrow">⟵</span>
+    <span data-i18n="back-catalog">Return to catalogue</span>
+  </a>
+</section>
+
+<footer class="footer">
+  <div class="footer-mark">
+    <span class="footer-mark-symbol">
+      <svg viewBox="0 0 40 40" aria-hidden="true">
+        <circle cx="20" cy="20" r="18" />
+        <path d="M10 22 Q 16 14 20 22 T 30 22" />
+      </svg>
+    </span>
+    <span>WIRE GROUP · 2026 — <span data-i18n="footer-note">An independent studio</span></span>
+  </div>
+  <div class="footer-right">
+    <span data-i18n="footer-build">Hand built · No templates</span>
+    <span class="footer-time" id="footerTime">— : —</span>
+  </div>
+</footer>
+
+</main>
+
+<script src="main.js"></script>
+<script src="ai-services.js" defer></script>
+
+</body>
+</html>
