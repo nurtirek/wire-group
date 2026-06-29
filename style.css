@@ -132,6 +132,9 @@ body.cursor-view .cursor-ring {
   font-size: 11px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
+  background: rgba(10, 10, 10, 0.72);
+  backdrop-filter: blur(14px) saturate(120%);
+  -webkit-backdrop-filter: blur(14px) saturate(120%);
 }
 .topbar::after {
   content: ""; position: absolute; left: 0; right: 0; bottom: 0;
