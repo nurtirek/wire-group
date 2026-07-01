@@ -193,228 +193,212 @@
           </svg>
         </aside>
 
-        <div class="phone demo-phone" id="demoPhone">
+        <div class="phone demo-phone" id="demoPhone" role="button" tabindex="0" aria-label="Демо iikoAnalytics — показать следующую вкладку">
         <div class="phone-glow" aria-hidden="true"></div>
         <div class="phone-notch" aria-hidden="true"></div>
-        <div class="phone-screen">
+        <div class="phone-screen dph">
           <div class="ph-statusbar">
             <span>9:41</span>
             <span class="ph-status-icons">●●●●● · 5G · 86%</span>
           </div>
-          <div class="ph-header">
-            <span class="ph-back" aria-hidden="true">‹</span>
-            <span class="ph-title">iikoAnalytics</span>
-            <span class="ph-live"><span class="ph-live-dot"></span> live</span>
-          </div>
-          <div class="ph-tabs">
-            <div class="ph-tabs-track">
-              <span class="ph-tab is-active" data-i18n="demo-tab-1">Home</span>
-              <span class="ph-tab" data-i18n="demo-tab-2">Sales</span>
-              <span class="ph-tab" data-i18n="demo-tab-3">Staff</span>
-              <span class="ph-tab" data-i18n="demo-tab-4">Costs</span>
-              <span class="ph-tab" data-i18n="demo-tab-5">Year/year</span>
-              <span class="ph-tab" data-i18n="demo-tab-6">Shifts</span>
+          <div class="dph-header">
+            <div>
+              <span class="dph-title" id="dphTitle">Демо Ресторан</span>
+              <span class="dph-date">вт, 30 июня</span>
             </div>
+            <span class="dph-menu" aria-hidden="true">⋯</span>
           </div>
 
           <div class="demo-screens">
 
             <!-- 1 · Главная -->
-            <div class="demo-screen is-active" data-screen="1">
-              <div class="ph-card primary">
-                <div class="ph-card-head">
-                  <span class="ph-card-label" data-i18n="demo-s1-rev">Revenue · today</span>
-                  <span class="ph-delta up">▲ 12.4%</span>
+            <div class="demo-screen is-active" data-screen="1" data-title="Демо Ресторан">
+              <div class="dph-chips">
+                <span class="dph-chip">📅 Даты</span>
+                <span class="dph-chip is-active">Сегодня</span>
+                <span class="dph-chip">Вчера</span>
+                <span class="dph-chip">Эта неделя</span>
+              </div>
+              <div class="dph-card">
+                <span class="dph-label">Выручка сегодня</span>
+                <div class="dph-value-row">
+                  <span class="dph-value">4 281 600 ₸</span>
+                  <span class="dph-change up">↑ 12.4%</span>
                 </div>
-                <div class="ph-card-value">₸ 4 281 600</div>
-                <svg class="ph-spark" viewBox="0 0 200 40" preserveAspectRatio="none" aria-hidden="true">
-                  <polyline points="0,32 20,28 40,30 60,22 80,25 100,18 120,20 140,12 160,14 180,8 200,10" />
-                  <circle cx="200" cy="10" r="2.5" class="ph-spark-dot" />
+                <svg class="dph-spark" viewBox="0 0 200 36" preserveAspectRatio="none" aria-hidden="true">
+                  <polyline points="0,30 28,26 56,28 84,20 112,22 140,14 170,16 200,7" />
                 </svg>
               </div>
-              <div class="ph-row">
-                <div class="ph-card small">
-                  <span class="ph-card-label" data-i18n="demo-s1-check">Avg. check</span>
-                  <span class="ph-card-value">₸ 9 240</span>
+              <div class="dph-row">
+                <div class="dph-card sm">
+                  <span class="dph-label">Средний чек</span>
+                  <span class="dph-value sm">9 240 ₸</span>
+                  <span class="dph-change up">↑ 4.1%</span>
                 </div>
-                <div class="ph-card small">
-                  <span class="ph-card-label" data-i18n="demo-s1-guests">Guests</span>
-                  <span class="ph-card-value">463</span>
+                <div class="dph-card sm">
+                  <span class="dph-label">Гостей</span>
+                  <span class="dph-value sm">463</span>
+                  <span class="dph-change up">↑ 6.8%</span>
                 </div>
               </div>
-              <div class="ph-card">
-                <div class="ph-card-head">
-                  <span class="ph-card-label" data-i18n="demo-s1-forecast">Day forecast</span>
-                  <span class="ph-delta up">▲</span>
-                </div>
-                <div class="ph-card-value">₸ 5 130 000</div>
+              <div class="dph-card">
+                <span class="dph-label">🎩 Быстрая статистика</span>
+                <div class="dph-trow"><span>Открытых заказов</span><span class="dph-badge">7</span></div>
+                <div class="dph-trow"><span>Выручка вчера</span><b>3 807 200 ₸</b></div>
+                <div class="dph-trow"><span>Прогноз на день</span><b>5 130 000 ₸</b></div>
               </div>
             </div>
 
             <!-- 2 · Продажи -->
-            <div class="demo-screen" data-screen="2">
-              <div class="ph-card primary">
-                <div class="ph-card-head">
-                  <span class="ph-card-label" data-i18n="demo-s2-channels">Channels · today</span>
-                </div>
-                <div class="ph-bar-row">
-                  <span class="ph-bar-label" data-i18n="demo-s2-hall">Dine-in</span>
-                  <span class="ph-bar"><span style="--w:62%"></span></span>
-                  <span class="ph-bar-val">62%</span>
-                </div>
-                <div class="ph-bar-row">
-                  <span class="ph-bar-label" data-i18n="demo-s2-delivery">Delivery</span>
-                  <span class="ph-bar"><span style="--w:28%"></span></span>
-                  <span class="ph-bar-val">28%</span>
-                </div>
-                <div class="ph-bar-row">
-                  <span class="ph-bar-label" data-i18n="demo-s2-pickup">Pickup</span>
-                  <span class="ph-bar"><span style="--w:10%"></span></span>
-                  <span class="ph-bar-val">10%</span>
-                </div>
+            <div class="demo-screen" data-screen="2" data-title="Продажи">
+              <div class="dph-chips">
+                <span class="dph-chip is-active">Общие</span>
+                <span class="dph-chip">Клиенты</span>
+                <span class="dph-chip">ABC</span>
+                <span class="dph-chip">Отмены</span>
               </div>
-              <div class="ph-card">
-                <div class="ph-card-head">
-                  <span class="ph-card-label" data-i18n="demo-s2-top">Top dishes</span>
-                </div>
-                <div class="ph-rank">
-                  <div class="ph-rank-row"><span data-i18n="demo-s2-d1">Ribeye steak</span><span class="val">₸ 384 000</span></div>
-                  <div class="ph-rank-row"><span data-i18n="demo-s2-d2">Tom yum</span><span class="val">₸ 291 500</span></div>
-                  <div class="ph-rank-row"><span data-i18n="demo-s2-d3">BBQ burger</span><span class="val">₸ 240 800</span></div>
-                </div>
+              <div class="dph-card">
+                <span class="dph-label">Каналы · сегодня</span>
+                <div class="dph-trow"><span>Зал</span><span class="dph-mut">62%</span><b>2 654 600 ₸</b></div>
+                <div class="dph-trow"><span>Доставка</span><span class="dph-mut">28%</span><b>1 198 800 ₸</b></div>
+                <div class="dph-trow"><span>Самовывоз</span><span class="dph-mut">10%</span><b>428 200 ₸</b></div>
+              </div>
+              <div class="dph-card">
+                <span class="dph-label">Топ-блюда</span>
+                <div class="dph-trow"><span>Стейк рибай</span><b>384 000 ₸</b></div>
+                <div class="dph-trow"><span>Том ям</span><b>291 500 ₸</b></div>
+                <div class="dph-trow"><span>Бургер BBQ</span><b>240 800 ₸</b></div>
               </div>
             </div>
 
             <!-- 3 · Персонал -->
-            <div class="demo-screen" data-screen="3">
-              <div class="ph-row">
-                <div class="ph-card small">
-                  <span class="ph-card-label" data-i18n="demo-s3-onshift">On shift now</span>
-                  <span class="ph-card-value">6</span>
+            <div class="demo-screen" data-screen="3" data-title="Персонал">
+              <div class="dph-row">
+                <div class="dph-card sm">
+                  <span class="dph-label">Сейчас на смене</span>
+                  <span class="dph-value sm">6</span>
                 </div>
-                <div class="ph-card small">
-                  <span class="ph-card-label" data-i18n="demo-s1-guests">Guests</span>
-                  <span class="ph-card-value">463</span>
+                <div class="dph-card sm">
+                  <span class="dph-label">Средний чек смены</span>
+                  <span class="dph-value sm">9 240 ₸</span>
                 </div>
               </div>
-              <div class="ph-card primary">
-                <div class="ph-card-head">
-                  <span class="ph-card-label" data-i18n="demo-s3-rank">Waiters · revenue</span>
-                </div>
-                <div class="ph-rank">
-                  <div class="ph-rank-row"><span data-i18n="demo-s3-n1">Aigerim</span><span class="val">₸ 612 400</span></div>
-                  <div class="ph-rank-row"><span data-i18n="demo-s3-n2">Damir</span><span class="val">₸ 548 200</span></div>
-                  <div class="ph-rank-row"><span data-i18n="demo-s3-n3">Aliya</span><span class="val">₸ 493 700</span></div>
-                </div>
+              <div class="dph-card">
+                <span class="dph-label">Кто сколько продал · сегодня</span>
+                <div class="dph-trow"><span>🥇 Айгерим</span><b>612 400 ₸</b></div>
+                <div class="dph-trow"><span>Дамир</span><b>548 200 ₸</b></div>
+                <div class="dph-trow"><span>Алия</span><b>493 700 ₸</b></div>
               </div>
             </div>
 
             <!-- 4 · Расходы -->
-            <div class="demo-screen" data-screen="4">
-              <div class="ph-card primary">
-                <div class="ph-card-head">
-                  <span class="ph-card-label" data-i18n="demo-s4-food">Foodcost</span>
-                  <span class="ph-delta up">▼ 1.4%</span>
-                </div>
-                <div class="ph-card-value">31.2%</div>
+            <div class="demo-screen" data-screen="4" data-title="Расходы">
+              <div class="dph-chips">
+                <span class="dph-chip is-active">Фудкост</span>
+                <span class="dph-chip">Накладные</span>
+                <span class="dph-chip">Списания</span>
+                <span class="dph-chip">Изъятия</span>
               </div>
-              <div class="ph-row">
-                <div class="ph-card small">
-                  <span class="ph-card-label" data-i18n="demo-s4-inv">Invoices · 7 days</span>
-                  <span class="ph-card-value">14</span>
-                </div>
-                <div class="ph-card small">
-                  <span class="ph-card-label" data-i18n="demo-s4-wo">Write-offs · week</span>
-                  <span class="ph-card-value">₸ 42 300</span>
+              <div class="dph-card">
+                <span class="dph-label">Фудкост · июнь</span>
+                <div class="dph-value-row">
+                  <span class="dph-value">31.2%</span>
+                  <span class="dph-change up">↓ 1.4%</span>
                 </div>
               </div>
-              <div class="ph-card">
-                <div class="ph-card-head">
-                  <span class="ph-card-label" data-i18n="demo-s4-last">Last · Moloko Dom</span>
-                  <span class="ph-time">OCR · 2 s</span>
-                </div>
-                <div class="ph-card-value">₸ 16 400</div>
+              <div class="dph-card">
+                <span class="dph-label">Накладные · 7 дней</span>
+                <div class="dph-trow"><span>Проведено</span><span class="dph-badge">14</span></div>
+                <div class="dph-trow"><span>Молочный дом · фото</span><b>16 400 ₸</b></div>
+                <div class="dph-trow"><span>Списания за неделю</span><b class="dph-neg">42 300 ₸</b></div>
               </div>
             </div>
 
             <!-- 5 · Год/год -->
-            <div class="demo-screen" data-screen="5">
-              <div class="ph-card primary">
-                <div class="ph-card-head">
-                  <span class="ph-card-label" data-i18n="demo-s5-head">June · year over year</span>
-                  <span class="ph-delta up">▲ 18%</span>
+            <div class="demo-screen" data-screen="5" data-title="Год к году">
+              <div class="dph-card">
+                <span class="dph-label">Июнь · выручка</span>
+                <div class="dph-value-row">
+                  <span class="dph-value">96.4M ₸</span>
+                  <span class="dph-change up">↑ 18%</span>
                 </div>
-                <div class="ph-bar-row">
-                  <span class="ph-bar-label mono">2026</span>
-                  <span class="ph-bar"><span class="accent" style="--w:100%"></span></span>
-                  <span class="ph-bar-val">96.4M</span>
-                </div>
-                <div class="ph-bar-row">
-                  <span class="ph-bar-label mono">2025</span>
-                  <span class="ph-bar"><span style="--w:85%"></span></span>
-                  <span class="ph-bar-val">81.7M</span>
-                </div>
+                <div class="dph-bar-row"><span>2026</span><span class="dph-bar"><span class="fill accent" style="--w:100%"></span></span><b>96.4M</b></div>
+                <div class="dph-bar-row"><span>2025</span><span class="dph-bar"><span class="fill" style="--w:85%"></span></span><b>81.7M</b></div>
               </div>
-              <div class="ph-row">
-                <div class="ph-card small">
-                  <span class="ph-card-label" data-i18n="demo-s5-check">Avg. check</span>
-                  <span class="ph-card-value">+ 9%</span>
+              <div class="dph-row">
+                <div class="dph-card sm">
+                  <span class="dph-label">Средний чек</span>
+                  <span class="dph-value sm dph-up">+ 9%</span>
                 </div>
-                <div class="ph-card small">
-                  <span class="ph-card-label" data-i18n="demo-s5-guests">Guests</span>
-                  <span class="ph-card-value">+ 6%</span>
+                <div class="dph-card sm">
+                  <span class="dph-label">Гостей</span>
+                  <span class="dph-value sm dph-up">+ 6%</span>
                 </div>
               </div>
             </div>
 
             <!-- 6 · Смены -->
-            <div class="demo-screen" data-screen="6">
-              <div class="ph-card">
-                <div class="ph-card-head">
-                  <span class="ph-card-label" data-i18n="demo-s6-shift">Shift № 142 · closed</span>
-                  <span class="ph-time">23:41</span>
+            <div class="demo-screen" data-screen="6" data-title="Кассовые смены">
+              <div class="dph-card">
+                <span class="dph-label">Смена № 142 · закрыта в 23:41</span>
+                <div class="dph-value-row">
+                  <span class="dph-value">4 281 600 ₸</span>
                 </div>
-                <div class="ph-card-value">₸ 4 281 600</div>
               </div>
-              <div class="ph-card alert">
-                <div class="ph-card-head">
-                  <span class="ph-card-label"><span class="alert-dot"></span> <span data-i18n="demo-s6-disc">Cash discrepancy</span></span>
+              <div class="dph-card alert">
+                <span class="dph-label">Расхождение по кассе</span>
+                <div class="dph-value-row">
+                  <span class="dph-value dph-neg">− 8 500 ₸</span>
+                  <span class="dph-badge red">проверить</span>
                 </div>
-                <div class="ph-card-value neg">− ₸ 8 500</div>
               </div>
-              <div class="ph-card">
-                <div class="ph-card-head">
-                  <span class="ph-card-label" data-i18n="demo-s6-wd">Withdrawals · 2</span>
+              <div class="dph-card">
+                <span class="dph-label">Изъятия · 2 операции</span>
+                <div class="dph-value-row">
+                  <span class="dph-value">25 000 ₸</span>
                 </div>
-                <div class="ph-card-value">₸ 25 000</div>
               </div>
-              <p class="ph-note" data-i18n="demo-s6-note">Every tenge accounted for.</p>
             </div>
 
           </div><!-- /.demo-screens -->
+
+          <div class="dph-nav">
+            <button class="dph-nav-item is-active" type="button" data-nav="0" aria-label="Главная">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+              <span>Главная</span>
+            </button>
+            <button class="dph-nav-item" type="button" data-nav="1" aria-label="Продажи">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+              <span>Продажи</span>
+            </button>
+            <button class="dph-nav-item" type="button" data-nav="2" aria-label="Персонал">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              <span>Персонал</span>
+            </button>
+            <button class="dph-nav-item" type="button" data-nav="3" aria-label="Расходы">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+              <span>Расходы</span>
+            </button>
+            <button class="dph-nav-item" type="button" data-nav="4" aria-label="Год/год">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+              <span>Год/год</span>
+            </button>
+            <button class="dph-nav-item" type="button" data-nav="5" aria-label="Смены">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="7" width="20" height="13" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="2" y1="13" x2="22" y2="13"/></svg>
+              <span>Смены</span>
+            </button>
+          </div>
         </div>
       </div>
-
       </div><!-- /.phone-orbit -->
 
-      <div class="demo-rail" id="demoRail">
-        <span class="demo-note mono" data-i18n="demo-note">Live demo · the app's real tabs</span>
-        <div class="demo-steps" role="tablist">
-          <button class="demo-step is-active" type="button" data-cursor="link"><span class="demo-step-num mono">01</span><span data-i18n="demo-tab-1">Home</span></button>
-          <button class="demo-step" type="button" data-cursor="link"><span class="demo-step-num mono">02</span><span data-i18n="demo-tab-2">Sales</span></button>
-          <button class="demo-step" type="button" data-cursor="link"><span class="demo-step-num mono">03</span><span data-i18n="demo-tab-3">Staff</span></button>
-          <button class="demo-step" type="button" data-cursor="link"><span class="demo-step-num mono">04</span><span data-i18n="demo-tab-4">Costs</span></button>
-          <button class="demo-step" type="button" data-cursor="link"><span class="demo-step-num mono">05</span><span data-i18n="demo-tab-5">Year/year</span></button>
-          <button class="demo-step" type="button" data-cursor="link"><span class="demo-step-num mono">06</span><span data-i18n="demo-tab-6">Shifts</span></button>
-        </div>
-        <p class="demo-caption" id="demoCaption" data-i18n="demo-cap-1">Revenue, average check and guests — the moment you open Telegram.</p>
-      </div>
+      <p class="demo-hint mono" data-i18n="demo-hint">Tap the phone — it flips through the real tabs</p>
     </div>
   </div>
 </section>
 
 <!-- ========== CHAPTERS — what it does every day ========== -->
-<section class="features-section section" id="features">
+<section class="features-section section section-light" id="features">
   <div class="section-header">
     <span class="section-index">03</span>
     <span class="section-title" data-i18n="features-title">Inside iikoAnalytics</span>
@@ -466,7 +450,7 @@
 </section>
 
 <!-- ========== PRICING ========== -->
-<section class="pricing-section section" id="pricing">
+<section class="pricing-section section section-light" id="pricing">
   <div class="section-header">
     <span class="section-index">04</span>
     <span class="section-title" data-i18n="pricing-title">Pricing</span>
