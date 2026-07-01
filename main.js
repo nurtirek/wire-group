@@ -245,6 +245,20 @@
       "ch-4-body": "Weeks, months and channels against last year. Growth and dips without a single Excel sheet.",
       "ch-4-tag": "Built in",
       "chapters-more": "And that is not all — inside: stop-list, ABC analysis, foodcost, guest reviews, payroll, branch comparison. All in one app.",
+      // Pricing
+      "pricing-title": "Pricing",
+      "pricing-head-1": "One price.",
+      "pricing-head-2": "Everything included.",
+      "pricing-launch": "Launch pricing · 2026",
+      "price-1-title": "Turnkey setup",
+      "price-1-body": "Integration with your iiko server, all branches connected, team walked through the app. Ready in days, not months.",
+      "price-1-per": "once",
+      "price-2-title": "Support & updates",
+      "price-2-body": "New features as they ship, monitoring, help in chat. Cancel any month.",
+      "price-2-per": "per month",
+      "price-note": "One prevented cash shortage — and the month has already paid for itself.",
+      "price-cta-1": "Get it at launch price",
+      "price-cta-2": "Try the demo first",
 
       // Onboarding
       "onboarding-title": "Onboarding",
@@ -608,6 +622,20 @@
       "ch-4-body": "Недели, месяцы и каналы против прошлого года. Рост и провалы — без единой таблицы Excel.",
       "ch-4-tag": "Встроено",
       "chapters-more": "И это не всё — внутри: стоп-лист, ABC-анализ, фудкост, отзывы гостей, зарплаты, сравнение точек. Всё в одном приложении.",
+      // Цена
+      "pricing-title": "Цена",
+      "pricing-head-1": "Одна цена.",
+      "pricing-head-2": "Всё включено.",
+      "pricing-launch": "Цена запуска · 2026",
+      "price-1-title": "Внедрение под ключ",
+      "price-1-body": "Интеграция с вашим iiko-сервером, подключение всех точек, обучение команды. Готово за дни, а не месяцы.",
+      "price-1-per": "разово",
+      "price-2-title": "Поддержка и обновления",
+      "price-2-body": "Новые функции по мере выхода, мониторинг, помощь в чате. Отмена в любой месяц.",
+      "price-2-per": "в месяц",
+      "price-note": "Одна предотвращённая недостача по кассе — и месяц уже окупился.",
+      "price-cta-1": "Подключить по цене запуска",
+      "price-cta-2": "Сначала попробовать демо",
 
       // Onboarding
       "onboarding-title": "Подключение",
