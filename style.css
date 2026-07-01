@@ -3734,3 +3734,43 @@ body.ai-modal-lock {
   .review-slots { grid-template-columns: 1fr; }
   .review-slot { min-height: 0; }
 }
+
+/* =============================================================
+   Topbar v2 — wordmark + real navigation
+   ============================================================= */
+.topbar-wordmark {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 17px;
+  letter-spacing: 0.3em;
+  color: var(--silver-bright);
+  white-space: nowrap;
+}
+.topbar-links {
+  display: flex;
+  align-items: center;
+  gap: clamp(18px, 3vw, 40px);
+}
+.topbar-link {
+  position: relative;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--silver-mute);
+  padding: 6px 0;
+  transition: color 0.3s var(--ease-out);
+}
+.topbar-link::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 100%; bottom: 0;
+  height: 1px;
+  background: var(--blue);
+  transition: right 0.35s var(--ease-out);
+}
+.topbar-link:hover { color: var(--silver-bright); }
+.topbar-link:hover::after { right: 0; }
+@media (max-width: 900px) {
+  .topbar-links { display: none; }
+}
