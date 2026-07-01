@@ -193,7 +193,7 @@
       "product-kicker": "For restaurants on iiko POS · v1.0 · 2026",
       "product-headline-1": "Your restaurant",
       "product-headline-2": "in Telegram.",
-      "product-sub": "iiko analytics in your pocket. No laptop, no logins, no desktop. Open Telegram — see revenue, average check, stop-list, supplier invoices. An AI analyst tells you what is wrong with the day, in plain language.",
+      "product-sub": "iiko analytics in your pocket. No laptop, no logins, no desktop. Open Telegram — see revenue, average check, supplier invoices and cash shifts. An AI analyst tells you what is wrong with the day, in plain language.",
       "cta-open-bot": "Open the bot",
       "cta-how-works": "See what's inside",
       "qf-1-label": "Setup", "qf-1-value": "3 steps · ~90 seconds",
@@ -228,62 +228,23 @@
       "orbit-price-name": "Milk",
 
       // Pain / Solution
-      "pain-section-title": "What changes",
-      "pain-title-1": "Before iikoAnalytics",
-      "pain-title-2": "After.",
-      "pain-sub": "Eight everyday pains of running an iiko restaurant. Solved.",
-      "pain-before": "Before",
-      "pain-after": "After",
-      "pain-1-b": "Laptop-only routine",
-      "pain-1-a": "Phone-first pulse",
-      "pain-2-b": "Branch by branch arithmetic",
-      "pain-2-a": "Multi-select merge",
-      "pain-3-b": "Stop-list from angry guests",
-      "pain-3-a": "Live · 30 s refresh",
-      "pain-4-b": "Hand-typed invoices",
-      "pain-4-a": "AI OCR · 2 seconds",
-      "pain-5-b": "Blind price creep",
-      "pain-5-a": "Per-supplier alerts",
-      "pain-6-b": "Menu by guesswork",
-      "pain-6-a": "Menu engineering · 2 × 2",
-      "pain-7-b": "Cash expenses lost",
-      "pain-7-a": "Logged in 10 seconds",
-      "pain-8-b": "Excel for year-over-year",
-      "pain-8-a": "YoY built in",
 
       // Features
       "features-title": "Inside iikoAnalytics",
-      "features-headline": "Every chapter of restaurant operations, refined into one screen.",
-      "feat-1-tag": "Home screen", "feat-1-title": "Pulse — your restaurant in one screen", "feat-1-body": "Today's revenue and delta to yesterday, average check, guest count, 7-day chart, daily forecast.",
-      "feat-1-li-1": "Stop-list live, 30 s refresh", "feat-1-li-2": "AI analyst in chat", "feat-1-li-3": "Open orders and yesterday recap",
-      "feat-2-tag": "Sales", "feat-2-title": "Sales — channel, dish, category", "feat-2-body": "Dine-in, delivery, takeaway, aggregators. Top dishes and categories with charts.",
-      "feat-2-li-1": "Menu Engineering matrix (2×2)", "feat-2-li-2": "ABC analysis of the assortment", "feat-2-li-3": "Voided items — who and what",
-      "feat-3-tag": "Staff", "feat-3-title": "Staff — shifts and rankings", "feat-3-body": "Shift sheets, revenue per waiter, average check by server, leaderboard.",
-      "feat-3-li-1": "Per-employee revenue", "feat-3-li-2": "Average check by server", "feat-3-li-3": "Monthly waiter ranking",
-      "feat-4-tag": "Expenses", "feat-4-title": "Expenses — categories and food cost", "feat-4-body": "Manual entry by category. Delete mis-typed records. Food cost calculated per dish.",
-      "feat-4-li-1": "Custom expense categories", "feat-4-li-2": "Auto-import from invoices", "feat-4-li-3": "Per-dish food cost",
-      "feat-5-tag": "Killer feature", "feat-5-title": "Invoices — photo to iiko in seconds", "feat-5-body": "Send the supplier invoice as a photo or text. Claude AI reads positions, supplier, prices. You review, then post into iiko.",
-      "feat-5-li-1": "Editor: add, delete, edit before posting", "feat-5-li-2": "Auto-link to existing nomenclature", "feat-5-li-3": "Post / un-post with one tap", "feat-5-li-4": "Price-growth history per supplier",
-      "feat-6-tag": "Year over year", "feat-6-title": "YoY — this year vs last", "feat-6-body": "Month by month, with YoY %. Scrollable table, no Excel.",
-      "feat-6-li-1": "Built-in YoY percentages", "feat-6-li-2": "Scrollable monthly table", "feat-6-li-3": "Charts beside the data",
-      "feat-7-tag": "Multi-branch", "feat-7-title": "Multi-branch — pick any combination", "feat-7-body": "Branches chip → modal with checkboxes. One branch, several, or all — data merged in parallel.",
-      "feat-7-li-1": "Quick select of any combo", "feat-7-li-2": "Parallel aggregation", "feat-7-li-3": "Owner sees all, manager sees their own",
-      "feat-8-tag": "Export", "feat-8-title": "Export — any report to Excel", "feat-8-body": "Any report, sent as an .xlsx file straight into the chat by the bot. No broken blob links.",
-      "feat-8-li-1": ".xlsx delivered in Telegram", "feat-8-li-2": "Preserved formatting", "feat-8-li-3": "Works for every report",
-      "feat-9-tag": "Suppliers", "feat-9-title": "Best supplier — per item", "feat-9-body": "For every position, see which supplier sells it cheapest, and by how much. The leader is highlighted in blue.",
-      "feat-9-li-1": "Per-item supplier ranking", "feat-9-li-2": "Price history per supplier", "feat-9-li-3": "Auto-suggested switch",
-      "feat-10-tag": "AI Analyst", "feat-10-title": "AI — plain language", "feat-10-body": "Claude reads your numbers and tells you what is wrong with the day, in two sentences. Ask follow-ups in chat.",
-      "feat-10-li-1": "Why today is off", "feat-10-li-2": "What to watch tomorrow", "feat-10-li-3": "Open-question chat",
-      "feat-11-tag": "ABC / Pareto", "feat-11-title": "ABC analysis — who carries the menu", "feat-11-body": "Splits the assortment into A / B / C by revenue share. You see at a glance which dishes do the work — and which sit as dead weight.",
-      "feat-11-li-1": "Standard 20 / 30 / 50 split", "feat-11-li-2": "Per category or full menu", "feat-11-li-3": "Pareto curve overlay",
-      "feat-12-tag": "Sales plan", "feat-12-title": "Sales plan — plan vs fact", "feat-12-body": "Upload the yearly plan from a template — the system pulls the fact from iiko and shows weekly completion by channel. No manual reconciliation tables.",
-      "feat-12-li-1": "By basket: Delivery · Dine-in/Takeout · Aggregators", "feat-12-li-2": "Weekly progress with colour highlight", "feat-12-li-3": "Fact from iiko, % calculated for you · per branch",
-      "feat-13-tag": "Couriers", "feat-13-title": "Courier analytics — who slows delivery", "feat-13-body": "A full picture for every courier over 30 days, straight from iiko — nothing to enter. See who drives fast and who misses the window.",
-      "feat-13-li-1": "Avg time on the road and avg delay, in minutes", "feat-13-li-2": "Late % per courier with a colour indicator", "feat-13-li-3": "Ranking by deliveries · branch summary",
-      "feat-14-tag": "Customers", "feat-14-title": "Customer base — segments & loyalty", "feat-14-body": "Segment guests by order count — from iiko (by delivery phone numbers) or from your own sheet. Find who actually brings the money.",
-      "feat-14-li-1": "Segments: Unique (1) · Loyal (2+) · VIP (10+)", "feat-14-li-2": "Repeat-order rate (retention) and average LTV", "feat-14-li-3": "Top customers by name · source: iiko or Google Sheet",
-      "feat-15-tag": "Peak hours", "feat-15-title": "Peak hours — a real heatmap of the week", "feat-15-body": "A day × hour grid coloured by load — the darker the cell, the busier that hour. See at a glance when the rushes hit and when the floor sits empty, so you staff and schedule against reality instead of a hunch.",
-      "feat-15-li-1": "Seven days × hours, coloured by load intensity", "feat-15-li-2": "Rush windows and dead hours spotted instantly", "feat-15-li-3": "For staffing and clients · per branch, straight from iiko",
+      "features-headline": "Four things it does for you, every day.",
+      "ch-1-title": "Revenue in your pocket",
+      "ch-1-body": "Open Telegram — revenue, average check and guests across every branch. No laptop, no VPN, no office.",
+      "ch-1-tag": "Live \u00b7 30 s",
+      "ch-2-title": "Invoices: photo \u2192 iiko",
+      "ch-2-body": "Shoot the supplier invoice. AI reads the items and prices, you confirm — and it is posted into iiko. Seconds instead of half an hour.",
+      "ch-2-tag": "OCR \u00b7 ~2 s",
+      "ch-3-title": "Cash control — theft protection",
+      "ch-3-body": "Cash shifts, withdrawals and discrepancies are visible the same evening. A missing sum can no longer hide until the end of the month.",
+      "ch-3-tag": "Shift audit",
+      "ch-4-title": "Year over year",
+      "ch-4-body": "Weeks, months and channels against last year. Growth and dips without a single Excel sheet.",
+      "ch-4-tag": "Built in",
+      "chapters-more": "And that is not all — inside: stop-list, ABC analysis, foodcost, guest reviews, payroll, branch comparison. All in one app.",
 
       // Onboarding
       "onboarding-title": "Onboarding",
@@ -630,62 +591,23 @@
       "orbit-price-name": "Молоко",
 
       // Pain / Solution
-      "pain-section-title": "Что меняется",
-      "pain-title-1": "До iikoAnalytics",
-      "pain-title-2": "После.",
-      "pain-sub": "Восемь ежедневных болей ресторана на iiko. Решены.",
-      "pain-before": "До",
-      "pain-after": "После",
-      "pain-1-b": "Только через ноутбук",
-      "pain-1-a": "Пульс в Telegram",
-      "pain-2-b": "Каждый филиал отдельно",
-      "pain-2-a": "Свод одним касанием",
-      "pain-3-b": "Стоп-лист от гостей",
-      "pain-3-a": "Live · обновление 30 с",
-      "pain-4-b": "Накладные вручную",
-      "pain-4-a": "AI OCR · за 2 секунды",
-      "pain-5-b": "Цены растут незаметно",
-      "pain-5-a": "Алерты по поставщикам",
-      "pain-6-b": "Меню наугад",
-      "pain-6-a": "Меню-инжиниринг · 2 × 2",
-      "pain-7-b": "Нал-расходы теряются",
-      "pain-7-a": "Записал за 10 секунд",
-      "pain-8-b": "YoY через Excel",
-      "pain-8-a": "Год к году · встроен",
 
       // Features
       "features-title": "Внутри iikoAnalytics",
-      "features-headline": "Каждая глава ресторанных операций — упакована в один экран.",
-      "feat-1-tag": "Главный экран", "feat-1-title": "Пульс — ресторан в одном экране", "feat-1-body": "Выручка за сегодня и Δ к вчера, средний чек, число гостей, график за 7 дней, прогноз на день.",
-      "feat-1-li-1": "Стоп-лист в реал-тайме, обновление 30 сек", "feat-1-li-2": "AI-аналитик в чате", "feat-1-li-3": "Открытые заказы и обзор вчерашнего",
-      "feat-2-tag": "Продажи", "feat-2-title": "Продажи — канал, блюдо, категория", "feat-2-body": "Зал, доставка, самовывоз, агрегаторы. Топ блюд и категории с диаграммами.",
-      "feat-2-li-1": "Меню-инжиниринг матрица (2×2)", "feat-2-li-2": "ABC-анализ ассортимента", "feat-2-li-3": "Удалённые позиции — кто и что",
-      "feat-3-tag": "Персонал", "feat-3-title": "Персонал — смены и рейтинг", "feat-3-body": "Табели смен, выручка по официанту, средний чек по сотруднику, рейтинг.",
-      "feat-3-li-1": "Выручка по каждому сотруднику", "feat-3-li-2": "Средний чек по официанту", "feat-3-li-3": "Месячный рейтинг официантов",
-      "feat-4-tag": "Расходы", "feat-4-title": "Расходы — категории и food-cost", "feat-4-body": "Ручной ввод по категориям. Удаление неверных записей. Food cost по каждому блюду.",
-      "feat-4-li-1": "Свои категории расходов", "feat-4-li-2": "Автоимпорт из накладных", "feat-4-li-3": "Food-cost по блюду",
-      "feat-5-tag": "Киллер-фича", "feat-5-title": "Накладные — фото в iiko за секунды", "feat-5-body": "Шлёшь накладную фото или текстом. Claude AI распознаёт позиции, поставщика, цены. Ты подтверждаешь — она проводится в iiko.",
-      "feat-5-li-1": "Редактор: добавить, удалить, изменить до проведения", "feat-5-li-2": "Автопривязка к существующей номенклатуре", "feat-5-li-3": "Провести / распровести в один тап", "feat-5-li-4": "История роста цен по поставщику",
-      "feat-6-tag": "Год к году", "feat-6-title": "YoY — этот год vs прошлый", "feat-6-body": "Месяц за месяцем, с YoY %. Скроллируемая таблица, без Excel.",
-      "feat-6-li-1": "Встроенные YoY проценты", "feat-6-li-2": "Скроллируемая помесячная таблица", "feat-6-li-3": "Графики рядом с цифрами",
-      "feat-7-tag": "Мульти-филиал", "feat-7-title": "Мульти-филиал — любая комбинация", "feat-7-body": "Чип «Филиалы» → модалка с чекбоксами. Один филиал, несколько или все — данные сливаются параллельно.",
-      "feat-7-li-1": "Быстрый выбор любой комбинации", "feat-7-li-2": "Параллельная агрегация", "feat-7-li-3": "Владелец видит всё, менеджер — свою точку",
-      "feat-8-tag": "Экспорт", "feat-8-title": "Экспорт — любой отчёт в Excel", "feat-8-body": "Любой отчёт — файлом .xlsx прямо в чат через бота. Никаких сломанных blob-ссылок.",
-      "feat-8-li-1": "Файл .xlsx прямо в Telegram", "feat-8-li-2": "Сохранённое форматирование", "feat-8-li-3": "Работает для каждого отчёта",
-      "feat-9-tag": "Поставщики", "feat-9-title": "Лучший поставщик — по каждой позиции", "feat-9-body": "По каждой позиции видно, у кого она дешевле и на сколько. Лидер выделен синим.",
-      "feat-9-li-1": "Рейтинг поставщиков по каждой позиции", "feat-9-li-2": "История цен у каждого поставщика", "feat-9-li-3": "Подсказка — на кого переключиться",
-      "feat-10-tag": "AI-аналитик", "feat-10-title": "AI — простым языком", "feat-10-body": "Claude читает твои цифры и в двух предложениях говорит, что не так с днём. Дальше — спрашивай в чате.",
-      "feat-10-li-1": "Почему сегодня хуже", "feat-10-li-2": "За чем смотреть завтра", "feat-10-li-3": "Чат с открытыми вопросами",
-      "feat-11-tag": "ABC / Парето", "feat-11-title": "ABC-анализ — кто тащит меню", "feat-11-body": "Разбивает ассортимент на A / B / C по доле выручки. Сразу видно, какие блюда работают — а какие сидят мёртвым грузом.",
-      "feat-11-li-1": "Стандартная разбивка 20 / 30 / 50", "feat-11-li-2": "По категории или всему меню", "feat-11-li-3": "Кривая Парето поверх",
-      "feat-12-tag": "План продаж", "feat-12-title": "План продаж — план vs факт", "feat-12-body": "Загрузите план на год по шаблону — система сама подтянет факт из iiko и покажет процент выполнения по неделям и каналам. Без ручных таблиц сверки.",
-      "feat-12-li-1": "По корзинам: Доставка · Зал/вынос · Агрегаторы", "feat-12-li-2": "Понедельный прогресс с цветовой подсветкой", "feat-12-li-3": "Факт из iiko, % считается за вас · по каждому филиалу",
-      "feat-13-tag": "Курьеры", "feat-13-title": "Аналитика курьеров — где теряется скорость", "feat-13-body": "Полная картина по каждому курьеру за 30 дней — прямо из iiko, ничего вводить не нужно. Видно, кто возит быстро, а кто срывает сроки.",
-      "feat-13-li-1": "Среднее время в пути и среднее опоздание, в минутах", "feat-13-li-2": "% опозданий по каждому курьеру с цветным индикатором", "feat-13-li-3": "Рейтинг по числу доставок · сводка по филиалу",
-      "feat-14-tag": "Клиенты", "feat-14-title": "База клиентов — сегменты и лояльность", "feat-14-body": "Сегментируйте гостей по числу заказов — из iiko (по телефонам доставок) или из своей таблицы. Находите тех, кто реально приносит деньги.",
-      "feat-14-li-1": "Сегменты: Уникальные (1) · Лояльные (2+) · VIP (10+)", "feat-14-li-2": "% повторных заказов (retention) и средний LTV", "feat-14-li-3": "Топ-клиенты поимённо · источник: iiko или Google-таблица",
-      "feat-15-tag": "Час пик", "feat-15-title": "Час пик — настоящая тепловая карта недели", "feat-15-body": "Сетка дни × часы, окрашенная по загрузке — чем темнее клетка, тем плотнее этот час. С одного взгляда видно, когда наплыв, а когда зал пустой, чтобы ставить смены и расписание по реальности, а не на глаз.",
-      "feat-15-li-1": "Семь дней × часы, цвет по интенсивности загрузки", "feat-15-li-2": "Часы пик и «мёртвые» часы видны сразу", "feat-15-li-3": "Для расстановки персонала и по клиентам · по филиалу, прямо из iiko",
+      "features-headline": "Четыре вещи, которые он делает за вас каждый день.",
+      "ch-1-title": "Выручка в кармане",
+      "ch-1-body": "Открыли Telegram — выручка, средний чек и гости по всем точкам. Без ноутбука, VPN и офиса.",
+      "ch-1-tag": "Live \u00b7 30 с",
+      "ch-2-title": "Накладные: фото \u2192 iiko",
+      "ch-2-body": "Сфотографируйте накладную поставщика. AI распознаёт позиции и цены, вы подтверждаете — и она уже в iiko. Секунды вместо получаса.",
+      "ch-2-tag": "OCR \u00b7 ~2 с",
+      "ch-3-title": "Контроль кассы — защита от краж",
+      "ch-3-body": "Кассовые смены, изъятия и расхождения видны в тот же вечер. Недостача больше не прячется до конца месяца.",
+      "ch-3-tag": "Аудит смен",
+      "ch-4-title": "Год к году",
+      "ch-4-body": "Недели, месяцы и каналы против прошлого года. Рост и провалы — без единой таблицы Excel.",
+      "ch-4-tag": "Встроено",
+      "chapters-more": "И это не всё — внутри: стоп-лист, ABC-анализ, фудкост, отзывы гостей, зарплаты, сравнение точек. Всё в одном приложении.",
 
       // Onboarding
       "onboarding-title": "Подключение",
@@ -974,18 +896,22 @@
      Replaces GSAP + Lenis. One observer, one shared CSS class — cheap. */
   if ("IntersectionObserver" in window) {
     const revealTargets = document.querySelectorAll(
-      ".section-header, .feature-card, .pain-row, " +
+      ".section-header, .feature-card, .pain-row, .chapter, .chapters-more, " +
+      ".price-row, .price-note, .review-slot, " +
       ".channel, .product-card, .steps li, .trust-block, .for-block, .why-block, " +
       ".product-intro-meta, .product-mockup, .features-headline, .pain-header, .open-inner"
     );
     revealTargets.forEach((el) => el.classList.add("reveal-in"));
 
-    // Stagger feature cards and pain rows for visual rhythm
+    // Stagger repeated rows for visual rhythm
     document.querySelectorAll(".features-grid .feature-card").forEach((el, i) => {
       el.style.setProperty("--reveal-i", i);
     });
     document.querySelectorAll(".pain-list .pain-row").forEach((el, i) => {
       el.style.setProperty("--reveal-i", i);
+    });
+    document.querySelectorAll(".chapters .chapter, .review-slots .review-slot").forEach((el, i) => {
+      el.style.setProperty("--reveal-i", i % 6);
     });
 
     const observer = new IntersectionObserver((entries) => {
