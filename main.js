@@ -201,6 +201,25 @@
       "qf-3-label": "Integration", "qf-3-value": "iiko Server REST 9.x",
       "qf-4-label": "AI", "qf-4-value": "Claude Sonnet · Anthropic",
       "mockup-caption": "Preview · actual interface",
+      // Live demo phone
+      "demo-note": "Live demo · the app's real tabs",
+      "demo-tab-1": "Home", "demo-tab-2": "Sales", "demo-tab-3": "Staff",
+      "demo-tab-4": "Costs", "demo-tab-5": "Year/year", "demo-tab-6": "Shifts",
+      "demo-cap-1": "Revenue, average check and guests — the moment you open Telegram.",
+      "demo-cap-2": "Where the money comes from: channels and top dishes.",
+      "demo-cap-3": "Who sells — and who is on shift right now.",
+      "demo-cap-4": "Foodcost, invoices and write-offs, under control.",
+      "demo-cap-5": "This June against last June. Growth you can see.",
+      "demo-cap-6": "Cash shifts and discrepancies. Theft has nowhere to hide.",
+      "demo-s1-rev": "Revenue · today", "demo-s1-check": "Avg. check", "demo-s1-guests": "Guests", "demo-s1-forecast": "Day forecast",
+      "demo-s2-channels": "Channels · today", "demo-s2-hall": "Dine-in", "demo-s2-delivery": "Delivery", "demo-s2-pickup": "Pickup",
+      "demo-s2-top": "Top dishes", "demo-s2-d1": "Ribeye steak", "demo-s2-d2": "Tom yum", "demo-s2-d3": "BBQ burger",
+      "demo-s3-onshift": "On shift now", "demo-s3-rank": "Waiters · revenue",
+      "demo-s3-n1": "Aigerim", "demo-s3-n2": "Damir", "demo-s3-n3": "Aliya",
+      "demo-s4-food": "Foodcost", "demo-s4-inv": "Invoices · 7 days", "demo-s4-wo": "Write-offs · week", "demo-s4-last": "Last · Moloko Dom",
+      "demo-s5-head": "June · year over year", "demo-s5-check": "Avg. check", "demo-s5-guests": "Guests",
+      "demo-s6-shift": "Shift № 142 · closed", "demo-s6-disc": "Cash discrepancy", "demo-s6-wd": "Withdrawals · 2",
+      "demo-s6-note": "Every tenge accounted for.",
       "orbit-ai-label": "AI · Invoice OCR",
       "orbit-ai-meta": "Claude · ~2 s",
       "orbit-net-label": "5 Branches · Live",
@@ -584,6 +603,25 @@
       "qf-3-label": "Интеграция", "qf-3-value": "iiko Server REST 9.x",
       "qf-4-label": "AI", "qf-4-value": "Claude Sonnet · Anthropic",
       "mockup-caption": "Превью · реальный интерфейс",
+      // Живое демо
+      "demo-note": "Живое демо · реальные вкладки приложения",
+      "demo-tab-1": "Главная", "demo-tab-2": "Продажи", "demo-tab-3": "Персонал",
+      "demo-tab-4": "Расходы", "demo-tab-5": "Год/год", "demo-tab-6": "Смены",
+      "demo-cap-1": "Выручка, средний чек и гости — сразу, как открыли Telegram.",
+      "demo-cap-2": "Откуда деньги: каналы продаж и топ-блюда.",
+      "demo-cap-3": "Кто продаёт — и кто сейчас на смене.",
+      "demo-cap-4": "Фудкост, накладные и списания — под контролем.",
+      "demo-cap-5": "Этот июнь против прошлого. Рост видно сразу.",
+      "demo-cap-6": "Кассовые смены и расхождения. Краже негде спрятаться.",
+      "demo-s1-rev": "Выручка · сегодня", "demo-s1-check": "Средний чек", "demo-s1-guests": "Гостей", "demo-s1-forecast": "Прогноз на день",
+      "demo-s2-channels": "Каналы · сегодня", "demo-s2-hall": "Зал", "demo-s2-delivery": "Доставка", "demo-s2-pickup": "Самовывоз",
+      "demo-s2-top": "Топ-блюда", "demo-s2-d1": "Стейк рибай", "demo-s2-d2": "Том ям", "demo-s2-d3": "Бургер BBQ",
+      "demo-s3-onshift": "Сейчас на смене", "demo-s3-rank": "Официанты · выручка",
+      "demo-s3-n1": "Айгерим", "demo-s3-n2": "Дамир", "demo-s3-n3": "Алия",
+      "demo-s4-food": "Фудкост", "demo-s4-inv": "Накладные · 7 дней", "demo-s4-wo": "Списания · неделя", "demo-s4-last": "Последняя · Молочный дом",
+      "demo-s5-head": "Июнь · год к году", "demo-s5-check": "Средний чек", "demo-s5-guests": "Гостей",
+      "demo-s6-shift": "Смена № 142 · закрыта", "demo-s6-disc": "Расхождение по кассе", "demo-s6-wd": "Изъятия · 2",
+      "demo-s6-note": "Виден каждый тенге.",
       "orbit-ai-label": "AI · Накладные",
       "orbit-ai-meta": "Claude · ~2 с",
       "orbit-net-label": "5 филиалов · live",
@@ -883,6 +921,54 @@
   };
   tick();
   setInterval(tick, 1000);
+
+  /* ----------- iikoAnalytics · live demo phone ----------- */
+  const demoPhone = document.getElementById("demoPhone");
+  if (demoPhone) {
+    const screens = Array.from(demoPhone.querySelectorAll(".demo-screen"));
+    const tabs = Array.from(demoPhone.querySelectorAll(".ph-tab"));
+    const track = demoPhone.querySelector(".ph-tabs-track");
+    const steps = Array.from(document.querySelectorAll(".demo-step"));
+    const caption = document.getElementById("demoCaption");
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    let demoIdx = 0;
+    let demoTimer = null;
+
+    const showScreen = (n) => {
+      demoIdx = (n + screens.length) % screens.length;
+      screens.forEach((s, i) => s.classList.toggle("is-active", i === demoIdx));
+      tabs.forEach((t, i) => t.classList.toggle("is-active", i === demoIdx));
+      steps.forEach((s, i) => s.classList.toggle("is-active", i === demoIdx));
+      if (track && tabs[demoIdx]) {
+        const viewport = track.parentElement.clientWidth;
+        const max = Math.max(0, track.scrollWidth - viewport);
+        const offset = Math.max(0, Math.min(tabs[demoIdx].offsetLeft - 4, max));
+        track.style.transform = `translateX(${-offset}px)`;
+      }
+      if (caption) {
+        const key = `demo-cap-${demoIdx + 1}`;
+        caption.setAttribute("data-i18n", key);
+        const dict = i18n[html.getAttribute("data-lang")] || i18n.en;
+        if (dict[key]) caption.textContent = dict[key];
+      }
+    };
+    const stopDemo = () => { if (demoTimer) { clearInterval(demoTimer); demoTimer = null; } };
+    const startDemo = () => {
+      if (reducedMotion) return;
+      stopDemo();
+      demoTimer = setInterval(() => showScreen(demoIdx + 1), 3600);
+    };
+
+    steps.forEach((s, i) => s.addEventListener("click", () => { showScreen(i); startDemo(); }));
+    demoPhone.addEventListener("mouseenter", stopDemo);
+    demoPhone.addEventListener("mouseleave", startDemo);
+    document.addEventListener("visibilitychange", () => {
+      if (document.hidden) stopDemo(); else startDemo();
+    });
+
+    showScreen(0);
+    startDemo();
+  }
 
   /* ----------- Lightweight reveals via IntersectionObserver -----------
      Replaces GSAP + Lenis. One observer, one shared CSS class — cheap. */

@@ -199,7 +199,7 @@
           </svg>
         </aside>
 
-        <div class="phone">
+        <div class="phone demo-phone" id="demoPhone">
         <div class="phone-glow" aria-hidden="true"></div>
         <div class="phone-notch" aria-hidden="true"></div>
         <div class="phone-screen">
@@ -213,58 +213,208 @@
             <span class="ph-live"><span class="ph-live-dot"></span> live</span>
           </div>
           <div class="ph-tabs">
-            <span class="ph-tab is-active">Pulse</span>
-            <span class="ph-tab">Sales</span>
-            <span class="ph-tab">Staff</span>
-            <span class="ph-tab">+</span>
-          </div>
-
-          <div class="ph-card primary">
-            <div class="ph-card-head">
-              <span class="ph-card-label">Revenue · today</span>
-              <span class="ph-delta up">▲ 12.4%</span>
-            </div>
-            <div class="ph-card-value">₸ 4 281 600</div>
-            <svg class="ph-spark" viewBox="0 0 200 40" preserveAspectRatio="none" aria-hidden="true">
-              <polyline points="0,32 20,28 40,30 60,22 80,25 100,18 120,20 140,12 160,14 180,8 200,10" />
-              <circle cx="200" cy="10" r="2.5" class="ph-spark-dot" />
-            </svg>
-          </div>
-
-          <div class="ph-row">
-            <div class="ph-card small">
-              <span class="ph-card-label">Avg. check</span>
-              <span class="ph-card-value">₸ 9 240</span>
-            </div>
-            <div class="ph-card small">
-              <span class="ph-card-label">Guests</span>
-              <span class="ph-card-value">463</span>
+            <div class="ph-tabs-track">
+              <span class="ph-tab is-active" data-i18n="demo-tab-1">Home</span>
+              <span class="ph-tab" data-i18n="demo-tab-2">Sales</span>
+              <span class="ph-tab" data-i18n="demo-tab-3">Staff</span>
+              <span class="ph-tab" data-i18n="demo-tab-4">Costs</span>
+              <span class="ph-tab" data-i18n="demo-tab-5">Year/year</span>
+              <span class="ph-tab" data-i18n="demo-tab-6">Shifts</span>
             </div>
           </div>
 
-          <div class="ph-card alert">
-            <div class="ph-card-head">
-              <span class="ph-card-label"><span class="alert-dot"></span> Stop-list · 3 items</span>
-              <span class="ph-time">30 s</span>
-            </div>
-            <div class="ph-list">
-              <span>· Beef tartare</span>
-              <span>· Burrata</span>
-              <span>· Espresso tonic</span>
-            </div>
-          </div>
+          <div class="demo-screens">
 
-          <div class="ph-card ai">
-            <div class="ph-card-head">
-              <span class="ph-card-label">◈ AI · why today is off</span>
+            <!-- 1 · Главная -->
+            <div class="demo-screen is-active" data-screen="1">
+              <div class="ph-card primary">
+                <div class="ph-card-head">
+                  <span class="ph-card-label" data-i18n="demo-s1-rev">Revenue · today</span>
+                  <span class="ph-delta up">▲ 12.4%</span>
+                </div>
+                <div class="ph-card-value">₸ 4 281 600</div>
+                <svg class="ph-spark" viewBox="0 0 200 40" preserveAspectRatio="none" aria-hidden="true">
+                  <polyline points="0,32 20,28 40,30 60,22 80,25 100,18 120,20 140,12 160,14 180,8 200,10" />
+                  <circle cx="200" cy="10" r="2.5" class="ph-spark-dot" />
+                </svg>
+              </div>
+              <div class="ph-row">
+                <div class="ph-card small">
+                  <span class="ph-card-label" data-i18n="demo-s1-check">Avg. check</span>
+                  <span class="ph-card-value">₸ 9 240</span>
+                </div>
+                <div class="ph-card small">
+                  <span class="ph-card-label" data-i18n="demo-s1-guests">Guests</span>
+                  <span class="ph-card-value">463</span>
+                </div>
+              </div>
+              <div class="ph-card">
+                <div class="ph-card-head">
+                  <span class="ph-card-label" data-i18n="demo-s1-forecast">Day forecast</span>
+                  <span class="ph-delta up">▲</span>
+                </div>
+                <div class="ph-card-value">₸ 5 130 000</div>
+              </div>
             </div>
-            <p class="ph-ai-text">Dinner traffic down 22%. Two stop-list items are bestsellers — swap them on the tablet menu before 7 pm.</p>
-          </div>
+
+            <!-- 2 · Продажи -->
+            <div class="demo-screen" data-screen="2">
+              <div class="ph-card primary">
+                <div class="ph-card-head">
+                  <span class="ph-card-label" data-i18n="demo-s2-channels">Channels · today</span>
+                </div>
+                <div class="ph-bar-row">
+                  <span class="ph-bar-label" data-i18n="demo-s2-hall">Dine-in</span>
+                  <span class="ph-bar"><span style="--w:62%"></span></span>
+                  <span class="ph-bar-val">62%</span>
+                </div>
+                <div class="ph-bar-row">
+                  <span class="ph-bar-label" data-i18n="demo-s2-delivery">Delivery</span>
+                  <span class="ph-bar"><span style="--w:28%"></span></span>
+                  <span class="ph-bar-val">28%</span>
+                </div>
+                <div class="ph-bar-row">
+                  <span class="ph-bar-label" data-i18n="demo-s2-pickup">Pickup</span>
+                  <span class="ph-bar"><span style="--w:10%"></span></span>
+                  <span class="ph-bar-val">10%</span>
+                </div>
+              </div>
+              <div class="ph-card">
+                <div class="ph-card-head">
+                  <span class="ph-card-label" data-i18n="demo-s2-top">Top dishes</span>
+                </div>
+                <div class="ph-rank">
+                  <div class="ph-rank-row"><span data-i18n="demo-s2-d1">Ribeye steak</span><span class="val">₸ 384 000</span></div>
+                  <div class="ph-rank-row"><span data-i18n="demo-s2-d2">Tom yum</span><span class="val">₸ 291 500</span></div>
+                  <div class="ph-rank-row"><span data-i18n="demo-s2-d3">BBQ burger</span><span class="val">₸ 240 800</span></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 3 · Персонал -->
+            <div class="demo-screen" data-screen="3">
+              <div class="ph-row">
+                <div class="ph-card small">
+                  <span class="ph-card-label" data-i18n="demo-s3-onshift">On shift now</span>
+                  <span class="ph-card-value">6</span>
+                </div>
+                <div class="ph-card small">
+                  <span class="ph-card-label" data-i18n="demo-s1-guests">Guests</span>
+                  <span class="ph-card-value">463</span>
+                </div>
+              </div>
+              <div class="ph-card primary">
+                <div class="ph-card-head">
+                  <span class="ph-card-label" data-i18n="demo-s3-rank">Waiters · revenue</span>
+                </div>
+                <div class="ph-rank">
+                  <div class="ph-rank-row"><span data-i18n="demo-s3-n1">Aigerim</span><span class="val">₸ 612 400</span></div>
+                  <div class="ph-rank-row"><span data-i18n="demo-s3-n2">Damir</span><span class="val">₸ 548 200</span></div>
+                  <div class="ph-rank-row"><span data-i18n="demo-s3-n3">Aliya</span><span class="val">₸ 493 700</span></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 4 · Расходы -->
+            <div class="demo-screen" data-screen="4">
+              <div class="ph-card primary">
+                <div class="ph-card-head">
+                  <span class="ph-card-label" data-i18n="demo-s4-food">Foodcost</span>
+                  <span class="ph-delta up">▼ 1.4%</span>
+                </div>
+                <div class="ph-card-value">31.2%</div>
+              </div>
+              <div class="ph-row">
+                <div class="ph-card small">
+                  <span class="ph-card-label" data-i18n="demo-s4-inv">Invoices · 7 days</span>
+                  <span class="ph-card-value">14</span>
+                </div>
+                <div class="ph-card small">
+                  <span class="ph-card-label" data-i18n="demo-s4-wo">Write-offs · week</span>
+                  <span class="ph-card-value">₸ 42 300</span>
+                </div>
+              </div>
+              <div class="ph-card">
+                <div class="ph-card-head">
+                  <span class="ph-card-label" data-i18n="demo-s4-last">Last · Moloko Dom</span>
+                  <span class="ph-time">OCR · 2 s</span>
+                </div>
+                <div class="ph-card-value">₸ 16 400</div>
+              </div>
+            </div>
+
+            <!-- 5 · Год/год -->
+            <div class="demo-screen" data-screen="5">
+              <div class="ph-card primary">
+                <div class="ph-card-head">
+                  <span class="ph-card-label" data-i18n="demo-s5-head">June · year over year</span>
+                  <span class="ph-delta up">▲ 18%</span>
+                </div>
+                <div class="ph-bar-row">
+                  <span class="ph-bar-label mono">2026</span>
+                  <span class="ph-bar"><span class="accent" style="--w:100%"></span></span>
+                  <span class="ph-bar-val">96.4M</span>
+                </div>
+                <div class="ph-bar-row">
+                  <span class="ph-bar-label mono">2025</span>
+                  <span class="ph-bar"><span style="--w:85%"></span></span>
+                  <span class="ph-bar-val">81.7M</span>
+                </div>
+              </div>
+              <div class="ph-row">
+                <div class="ph-card small">
+                  <span class="ph-card-label" data-i18n="demo-s5-check">Avg. check</span>
+                  <span class="ph-card-value">+ 9%</span>
+                </div>
+                <div class="ph-card small">
+                  <span class="ph-card-label" data-i18n="demo-s5-guests">Guests</span>
+                  <span class="ph-card-value">+ 6%</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 6 · Смены -->
+            <div class="demo-screen" data-screen="6">
+              <div class="ph-card">
+                <div class="ph-card-head">
+                  <span class="ph-card-label" data-i18n="demo-s6-shift">Shift № 142 · closed</span>
+                  <span class="ph-time">23:41</span>
+                </div>
+                <div class="ph-card-value">₸ 4 281 600</div>
+              </div>
+              <div class="ph-card alert">
+                <div class="ph-card-head">
+                  <span class="ph-card-label"><span class="alert-dot"></span> <span data-i18n="demo-s6-disc">Cash discrepancy</span></span>
+                </div>
+                <div class="ph-card-value neg">− ₸ 8 500</div>
+              </div>
+              <div class="ph-card">
+                <div class="ph-card-head">
+                  <span class="ph-card-label" data-i18n="demo-s6-wd">Withdrawals · 2</span>
+                </div>
+                <div class="ph-card-value">₸ 25 000</div>
+              </div>
+              <p class="ph-note" data-i18n="demo-s6-note">Every tenge accounted for.</p>
+            </div>
+
+          </div><!-- /.demo-screens -->
         </div>
       </div>
 
       </div><!-- /.phone-orbit -->
-      <span class="mockup-caption mono" data-i18n="mockup-caption">Preview · actual interface</span>
+
+      <div class="demo-rail" id="demoRail">
+        <span class="demo-note mono" data-i18n="demo-note">Live demo · the app's real tabs</span>
+        <div class="demo-steps" role="tablist">
+          <button class="demo-step is-active" type="button" data-cursor="link"><span class="demo-step-num mono">01</span><span data-i18n="demo-tab-1">Home</span></button>
+          <button class="demo-step" type="button" data-cursor="link"><span class="demo-step-num mono">02</span><span data-i18n="demo-tab-2">Sales</span></button>
+          <button class="demo-step" type="button" data-cursor="link"><span class="demo-step-num mono">03</span><span data-i18n="demo-tab-3">Staff</span></button>
+          <button class="demo-step" type="button" data-cursor="link"><span class="demo-step-num mono">04</span><span data-i18n="demo-tab-4">Costs</span></button>
+          <button class="demo-step" type="button" data-cursor="link"><span class="demo-step-num mono">05</span><span data-i18n="demo-tab-5">Year/year</span></button>
+          <button class="demo-step" type="button" data-cursor="link"><span class="demo-step-num mono">06</span><span data-i18n="demo-tab-6">Shifts</span></button>
+        </div>
+        <p class="demo-caption" id="demoCaption" data-i18n="demo-cap-1">Revenue, average check and guests — the moment you open Telegram.</p>
+      </div>
     </div>
   </div>
 </section>
