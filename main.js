@@ -259,6 +259,17 @@
       "price-note": "One prevented cash shortage — and the month has already paid for itself.",
       "price-cta-1": "Get it at launch price",
       "price-cta-2": "Try the demo first",
+      // First restaurants (reserved reviews)
+      "reviews-title": "First restaurants",
+      "reviews-head-1": "Launched in 2026.",
+      "reviews-head-2": "The first reviews are being earned.",
+      "reviews-sub": "This space is reserved for the teams already running iikoAnalytics — possibly yours.",
+      "review-pending": "Review in progress — the restaurant is on its second month.",
+      "review-slot-venue": "Restaurant · Almaty",
+      "review-pending-2": "Review in progress — connected this season.",
+      "review-slot-venue-2": "Chain · 4 branches",
+      "review-cta": "Be the first — get connected at launch price, and this spot is yours.",
+      "review-cta-link": "Write to us",
 
       // Onboarding
       "onboarding-title": "Onboarding",
@@ -636,6 +647,17 @@
       "price-note": "Одна предотвращённая недостача по кассе — и месяц уже окупился.",
       "price-cta-1": "Подключить по цене запуска",
       "price-cta-2": "Сначала попробовать демо",
+      // Первые рестораны (место под отзывы)
+      "reviews-title": "Первые рестораны",
+      "reviews-head-1": "Запуск — 2026.",
+      "reviews-head-2": "Первые отзывы уже зарабатываются.",
+      "reviews-sub": "Это место зарезервировано под команды, которые уже работают в iikoAnalytics — возможно, под вашу.",
+      "review-pending": "Отзыв готовится — ресторан на втором месяце работы.",
+      "review-slot-venue": "Ресторан · Алматы",
+      "review-pending-2": "Отзыв готовится — подключились в этом сезоне.",
+      "review-slot-venue-2": "Сеть · 4 точки",
+      "review-cta": "Станьте первыми — подключитесь по цене запуска, и это место ваше.",
+      "review-cta-link": "Написать нам",
 
       // Onboarding
       "onboarding-title": "Подключение",
