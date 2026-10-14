@@ -838,11 +838,12 @@
     const oth = langToggle?.querySelector(".lang-other");
     if (cur) cur.textContent = lang === "en" ? "EN" : "RU";
     if (oth) oth.textContent = lang === "en" ? "RU" : "EN";
-    localStorage.setItem("wg-lang", lang);
+    try { localStorage.setItem("wg-lang", lang); } catch { /* keep the selected language for this page */ }
     document.dispatchEvent(new CustomEvent("wg:langchange", { detail: { lang } }));
   };
 
-  const savedLang = localStorage.getItem("wg-lang") || "en";
+  let savedLang = "en";
+  try { savedLang = localStorage.getItem("wg-lang") || "en"; } catch { /* storage may be blocked */ }
   applyLang(savedLang);
 
   langToggle?.addEventListener("click", () => {
